@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Microbiology Research | BioResearch Hub</title>
+
+    <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f9f6;
+    color: #173b2a;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #063d27, #0b5d3b, #14845a);
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+/* NAVIGATION */
+nav {
+    background: #062f20;
+    padding: 16px 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #8ee8bd;
+}
+
+/* MAIN CONTAINER */
+.container {
+    max-width: 1050px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+/* HEADINGS */
+h2 {
+    color: #0b5d3b;
+}
+
+h3 {
+    color: #0b5d3b;
+}
+
+/* CARDS */
+.card,
+.article-card,
+.resource-card,
+.contact-box,
+.article,
+.topic-card {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    border: 1px solid #e3eee8;
+    transition: 0.3s;
+}
+
+.card:hover,
+.article-card:hover,
+.resource-card:hover,
+.topic-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* BUTTONS */
+.button,
+.read,
+.back {
+    display: inline-block;
+    background: linear-gradient(135deg, #0b5d3b, #14845a);
+    color: white;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none;
+}
+
+.button:hover,
+.read:hover,
+.back:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(11,93,59,0.25);
+}
+
+/* FORM */
+input,
+textarea {
+    border: 1px solid #c8d8cf;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #8ee8bd;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 70px;
+    background: #062f20;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.7s ease;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    header {
+        padding: 45px 15px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 6px;
+    }
+
+    .container {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+}
+      .dark-button {
+    background: transparent;
+    color: white;
+    border: 1px solid #8ee8bd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.dark-button:hover {
+    background: #8ee8bd;
+    color: #062f20;
+}
+
+.dark-mode {
+    background: #10251c;
+    color: #e8f5ee;
+}
+
+.dark-mode .card,
+.dark-mode .topic-card {
+    background: #193529;
+    border-color: #285240;
+}
+
+.dark-mode h2,
+.dark-mode h3 {
+    color: #8ee8bd;
+}
+      /* ==============================
+   MICROBIOLOGY STUDY NOTES
+============================== */
+
+.study-notes {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.study-notes > h2 {
+    text-align: center;
+    color: #0b5d3b;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.note-topic {
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    border: 1px solid #dfe7e2;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    transition: 0.3s ease;
+}
+
+.note-topic:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+    border-color: #b9dccb;
+}
+
+.note-topic h3 {
+    color: #0b5d3b;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.note-topic h4 {
+    color: #14845a;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.note-topic p {
+    color: #536b5e;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.note-topic ul,
+.note-topic ol {
+    color: #536b5e;
+    line-height: 1.9;
+    padding-left: 25px;
+}
+
+.note-topic li {
+    margin-bottom: 7px;
+}
+
+.note-topic strong {
+    color: #0b5d3b;
+}
+
+.note-topic .example {
+    background: #eaf7f0;
+    padding: 18px;
+    border-left: 4px solid #14845a;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Dark Mode */
+
+body.dark-mode .study-notes > h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .note-topic {
+    background: #193529;
+    border-color: #285240;
+}
+
+body.dark-mode .note-topic h3,
+body.dark-mode .note-topic h4 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .note-topic p,
+body.dark-mode .note-topic ul,
+body.dark-mode .note-topic ol {
+    color: #c7ddd1;
+}
+
+body.dark-mode .note-topic strong {
+    color: #8ee8bd;
+}
+
+body.dark-mode .note-topic .example {
+    background: #10251c;
+    border-left-color: #8ee8bd;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .study-notes {
+        padding: 20px 15px;
+    }
+
+    .study-notes > h2 {
+        font-size: 27px;
+    }
+
+    .note-topic {
+        padding: 24px;
+    }
+
+    .note-topic h3 {
+        font-size: 21px;
+    }
+
+    .note-topic p,
+    .note-topic li {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🦠 Microbiology Research</h1>
+    <p>Exploring microorganisms and their roles in life</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="genetics.html">Genetics</a>
+    <a href="microbiology.html">Microbiology</a>
+    <a href="ecology.html">Ecology</a>
+    <a href="cell-biology.html">Cell Biology</a>
+    <a href="articles.html">Articles</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+
+    <button onclick="toggleDarkMode()" class="dark-button">
+        🌙 Dark Mode
+    </button>
+</nav>
+
+<main class="content">
+
+    <section class="intro">
+        <h2>About Microbiology</h2>
+
+        <p>
+            Microbiology is the study of microorganisms and their
+            activities. These organisms are important in ecosystems,
+            medicine, agriculture, food production, and many other
+            areas of biology.
+        </p>
+    </section>
+
+    <section class="topic-grid">
+
+        <div class="topic">
+            <h3>🦠 Bacteria</h3>
+            <p>
+                Bacteria are microscopic organisms found in many
+                environments. Some are useful, while others can
+                cause disease.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h3>🧫 Fungi</h3>
+            <p>
+                Fungi include yeasts and molds. They play important
+                roles in decomposition, food production, and
+                nutrient cycling.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h3>🔬 Viruses</h3>
+            <p>
+                Viruses are infectious biological agents that
+                replicate inside suitable host cells.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h3>🌱 Environmental Microbiology</h3>
+            <p>
+                Environmental microbiology examines microorganisms
+                in soil, water, and other ecosystems.
+            </p>
+        </div>
+
+    </section>
+  <section class="study-notes">
+
+    <h2>🦠 Microbiology: Detailed Study Notes</h2>
+
+    <div class="note-topic">
+        <h3>1. Meaning of Microbiology</h3>
+        <p>
+            Microbiology is the branch of biology concerned with the study
+            of microorganisms and other microscopic forms of life.
+        </p>
+
+        <p>
+            Microorganisms can be found in soil, water, air, food, plants,
+            animals, and the human body.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>2. Major Groups of Microorganisms</h3>
+
+        <ul>
+            <li><strong>Bacteria:</strong> Single-celled prokaryotic organisms.</li>
+            <li><strong>Fungi:</strong> Organisms such as yeasts and moulds.</li>
+            <li><strong>Protozoa:</strong> Mostly single-celled eukaryotic organisms.</li>
+            <li><strong>Algae:</strong> Photosynthetic organisms found mainly in aquatic environments.</li>
+            <li><strong>Viruses:</strong> Acellular infectious agents that reproduce only inside suitable host cells.</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>3. Bacteria</h3>
+
+        <p>
+            Bacteria are microscopic single-celled prokaryotic organisms.
+            They do not have a membrane-bound nucleus.
+        </p>
+
+        <p><strong>Common bacterial shapes include:</strong></p>
+
+        <ul>
+            <li><strong>Coccus:</strong> Spherical or round-shaped.</li>
+            <li><strong>Bacillus:</strong> Rod-shaped.</li>
+            <li><strong>Spirillum:</strong> Spiral-shaped.</li>
+            <li><strong>Vibrio:</strong> Curved or comma-shaped.</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>4. Bacterial Cell Structure</h3>
+
+        <ul>
+            <li><strong>Capsule:</strong> May provide protection and help attachment.</li>
+            <li><strong>Cell wall:</strong> Provides support and helps maintain cell shape.</li>
+            <li><strong>Cell membrane:</strong> Controls movement of substances.</li>
+            <li><strong>Cytoplasm:</strong> Site of many metabolic reactions.</li>
+            <li><strong>Ribosomes:</strong> Site of protein synthesis.</li>
+            <li><strong>Nucleoid:</strong> Region containing the main bacterial DNA.</li>
+            <li><strong>Flagellum:</strong> May help movement.</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>5. Bacterial Nutrition</h3>
+
+        <p>
+            Bacteria obtain nutrients in different ways.
+        </p>
+
+        <ul>
+            <li>Some make their own food.</li>
+            <li>Some feed on dead organic matter.</li>
+            <li>Some obtain nutrients from living organisms.</li>
+            <li>Some live in mutualistic relationships with other organisms.</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>6. Bacterial Reproduction</h3>
+
+        <p>
+            Many bacteria reproduce asexually through a process called
+            <strong>binary fission</strong>.
+        </p>
+
+        <p>
+            During binary fission, the bacterial DNA is copied and the
+            cell divides to produce two daughter cells.
+        </p>
+
+        <p class="example">
+            One bacterial cell → DNA replication → Cell division → Two daughter cells
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>7. Fungi</h3>
+
+        <p>
+            Fungi are eukaryotic organisms. They include yeasts, moulds,
+            and mushrooms.
+        </p>
+
+        <p>
+            Most fungi obtain nutrients by secreting enzymes onto organic
+            material and absorbing the resulting soluble substances.
+        </p>
+
+        <p>
+            Fungi are important decomposers in ecosystems.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>8. Yeast</h3>
+
+        <p>
+            Yeast is a single-celled fungus commonly used in baking and
+            fermentation.
+        </p>
+
+        <p>
+            Yeast can reproduce asexually by <strong>budding</strong>.
+        </p>
+
+        <p>
+            During fermentation, yeast converts sugars into ethanol and
+            carbon dioxide under suitable conditions.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>9. Protozoa</h3>
+
+        <p>
+            Protozoa are mostly unicellular eukaryotic organisms.
+            Many live in water or moist environments.
+        </p>
+
+        <p>
+            Some protozoa are free-living while others are parasites.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>10. Algae</h3>
+
+        <p>
+            Algae are photosynthetic organisms that are commonly found
+            in aquatic environments.
+        </p>
+
+        <p>
+            They contribute significantly to aquatic food chains and
+            release oxygen through photosynthesis.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>11. Viruses</h3>
+
+        <p>
+            Viruses are acellular infectious agents. They contain genetic
+            material surrounded by a protein coat and depend on host cells
+            for replication.
+        </p>
+
+        <p>
+            Because viruses do not carry out independent cellular
+            metabolism like cells, they are not classified as cellular
+            organisms.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>12. Useful Microorganisms</h3>
+
+        <ul>
+            <li>Production of yoghurt and other fermented foods.</li>
+            <li>Bread production using yeast.</li>
+            <li>Production of some medicines and useful biological products.</li>
+            <li>Decomposition of dead organic matter.</li>
+            <li>Recycling of nutrients in ecosystems.</li>
+            <li>Waste treatment and biotechnology.</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>13. Harmful Microorganisms</h3>
+
+        <p>
+            Some microorganisms cause diseases in humans, animals, and
+            plants. Others spoil food or damage crops.
+        </p>
+
+        <p>
+            Examples of effects include:
+        </p>
+
+        <ul>
+            <li>Food spoilage</li>
+            <li>Plant diseases</li>
+            <li>Animal diseases</li>
+            <li>Human infectious diseases</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>14. Disease Transmission</h3>
+
+        <p>
+            Infectious microorganisms can spread through different routes.
+        </p>
+
+        <ul>
+            <li>Air and respiratory droplets</li>
+            <li>Contaminated food or water</li>
+            <li>Direct contact</li>
+            <li>Contaminated surfaces</li>
+            <li>Vectors such as mosquitoes</li>
+            <li>Blood and other body fluids</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>15. Prevention and Control</h3>
+
+        <ul>
+            <li>Regular hand washing.</li>
+            <li>Proper food preparation and storage.</li>
+            <li>Safe drinking water.</li>
+            <li>Good personal hygiene.</li>
+            <li>Proper waste disposal.</li>
+            <li>Cleaning and disinfection.</li>
+            <li>Vaccination where appropriate.</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>16. Microorganisms and Decomposition</h3>
+
+        <p>
+            Bacteria and fungi play important roles as decomposers.
+            They break down dead plants and animals and return nutrients
+            to the environment.
+        </p>
+
+        <p>
+            This process is essential for nutrient cycling and maintaining
+            ecosystem productivity.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>17. Microorganisms in Biotechnology</h3>
+
+        <p>
+            Microorganisms are used in biotechnology because they can
+            produce useful substances and carry out important biochemical
+            processes.
+        </p>
+
+        <ul>
+            <li>Fermentation</li>
+            <li>Food production</li>
+            <li>Waste treatment</li>
+            <li>Production of useful enzymes</li>
+            <li>Research and genetic technology</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>18. Quick Microbiology Revision</h3>
+
+        <ul>
+            <li><strong>Microbiology:</strong> Study of microorganisms.</li>
+            <li><strong>Bacteria:</strong> Microscopic prokaryotic organisms.</li>
+            <li><strong>Fungi:</strong> Eukaryotic organisms such as yeast and moulds.</li>
+            <li><strong>Protozoa:</strong> Mostly unicellular eukaryotes.</li>
+            <li><strong>Algae:</strong> Mainly photosynthetic organisms.</li>
+            <li><strong>Virus:</strong> Acellular infectious agent requiring a host cell for replication.</li>
+            <li><strong>Binary fission:</strong> Common form of bacterial reproduction.</li>
+            <li><strong>Budding:</strong> Asexual reproduction commonly seen in yeast.</li>
+            <li><strong>Decomposers:</strong> Organisms that break down dead organic material.</li>
+        </ul>
+    </div>
+
+</section>
+
+    <a class="back" href="index.html">← Back to Home</a>
+
+</main>
+
+<fooster>
+    <p>© 2026 BioResearch Hub</p>
+</fooster> 
+  <script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (document.body.classList.contains("dark-mode")) {
+        button.innerHTML = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        button.innerHTML = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+}
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (button) {
+        button.innerHTML = "☀️ Light Mode";
+    }
+}
+</script>
+
+</body>
+</html>

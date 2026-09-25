@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Understanding Genetic Variation | BioResearch Hub</title>
+
+    <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f9f6;
+    color: #173b2a;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #063d27, #0b5d3b, #14845a);
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+/* NAVIGATION */
+nav {
+    background: #062f20;
+    padding: 16px 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #8ee8bd;
+}
+
+/* MAIN CONTAINER */
+.container {
+    max-width: 1050px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+/* HEADINGS */
+h2 {
+    color: #0b5d3b;
+}
+
+h3 {
+    color: #0b5d3b;
+}
+
+/* CARDS */
+.card,
+.article-card,
+.resource-card,
+.contact-box,
+.article,
+.topic-card {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    border: 1px solid #e3eee8;
+    transition: 0.3s;
+}
+
+.card:hover,
+.article-card:hover,
+.resource-card:hover,
+.topic-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* BUTTONS */
+.button,
+.read,
+.back {
+    display: inline-block;
+    background: linear-gradient(135deg, #0b5d3b, #14845a);
+    color: white;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none;
+}
+
+.button:hover,
+.read:hover,
+.back:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(11,93,59,0.25);
+}
+
+/* FORM */
+input,
+textarea {
+    border: 1px solid #c8d8cf;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #8ee8bd;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 70px;
+    background: #062f20;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.7s ease;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    header {
+        padding: 45px 15px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 6px;
+    }
+
+    .container {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+ 
+}
+      /* DARK / LIGHT MODE */
+
+.dark-button {
+    background: transparent;
+    color: white;
+    border: 1px solid #8ee8bd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: 0.3s;
+}
+
+.dark-button:hover {
+    background: #8ee8bd;
+    color: #062f20;
+}
+
+body.dark-mode {
+    background: #10251c;
+    color: #e8f5ee;
+}
+
+body.dark-mode header {
+    background: linear-gradient(135deg, #021c12, #063d27, #0b5d3b);
+}
+
+body.dark-mode nav,
+body.dark-mode footer {
+    background: #021c12;
+}
+
+body.dark-mode .article,
+body.dark-mode .article-box,
+body.dark-mode .card,
+body.dark-mode .topic-card,
+body.dark-mode .info {
+    background: #193529;
+    color: #e8f5ee;
+    border-color: #285240;
+}
+
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode a {
+    color: #8ee8bd;
+}
+    
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧬 Understanding Genetic Variation</h1>
+    <p>BioResearch Hub — Genetics Research</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="genetics.html">Genetics</a>
+    <a href="microbiology.html">Microbiology</a>
+    <a href="ecology.html">Ecology</a>
+    <a href="cell-biology.html">Cell Biology</a>
+    <a href="articles.html">Articles</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+
+    <button id="themeToggle" class="dark-button">🌙</button>
+</nav>
+
+<main class="article">
+
+    <article class="article-box">
+
+        <h2>Introduction</h2>
+
+        <p>
+            Genetic variation refers to differences in genetic material
+            among individuals of the same species. These differences
+            contribute to the diversity observed within biological
+            populations.
+        </p>
+
+        <div class="info">
+            <strong>Key idea:</strong>
+            Genetic variation provides differences that can influence
+            characteristics of individuals and populations.
+        </div>
+
+        <h2>What Causes Genetic Variation?</h2>
+
+        <p>
+            Genetic variation can arise through several biological
+            processes, including mutation and the reshuffling of
+            genetic material during reproduction.
+        </p>
+
+        <ul>
+            <li>Mutations can change DNA sequences.</li>
+            <li>Recombination can create new combinations of alleles.</li>
+            <li>Independent assortment contributes to genetic diversity.</li>
+            <li>Random fertilization can produce different genetic combinations.</li>
+        </ul>
+
+        <h2>Examples of Genetic Variation</h2>
+
+        <p>
+            Genetic variation can be observed in many characteristics,
+            such as differences in blood groups, inherited traits,
+            and other biological characteristics.
+        </p>
+
+        <h2>Why Is Genetic Variation Important?</h2>
+
+        <p>
+            Genetic variation is important because it contributes to
+            biological diversity. In populations, differences in
+            inherited characteristics can affect how organisms respond
+            to changing environmental conditions.
+        </p>
+
+        <h2>Conclusion</h2>
+
+        <p>
+            Genetic variation is a fundamental concept in genetics and
+            evolutionary biology. Understanding its causes and effects
+            helps researchers study heredity, populations, biodiversity,
+            and biological change.
+        </p>
+
+        <h2>📚 References</h2>
+
+        <ul>
+            <li>Campbell Biology — Genetics and Heredity</li>
+            <li>OpenStax Biology — Genetics</li>
+            <li>National Human Genome Research Institute — Genetics resources</li>
+        </ul>
+
+        <a class="back" href="articles.html">
+            ← Back to Research Articles
+        </a>
+
+    </article>
+
+</main>
+
+<footer>
+    <p>© 2026 BioResearch Hub</p>
+</footer> 
+  <script>
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        themeToggle.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
+    } else {
+        themeToggle.textContent = "🌙";
+        localStorage.setItem("theme", "light");
+    }
+});
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggle.textContent = "☀️";
+}
+</script>
+  
+</body>
+</html>

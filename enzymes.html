@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Enzymes Notes | BioResearch Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f9f6;
+            color: #173b2a;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #063d27, #0b5d3b, #14845a);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #062f20;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .notes-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #0b5d3b;
+            margin: 30px 0 12px;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul,
+        ol {
+            margin: 10px 0 20px 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .topic-box {
+            background: #eaf7f0;
+            border-left: 5px solid #14845a;
+            padding: 18px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .formula-box {
+            background: #f1f8f4;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 24px;
+            background: #0b5d3b;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 60px;
+            background: #062f20;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 29px;
+            }
+
+            .notes-container {
+                padding: 25px 20px;
+            }
+        }
+      /* DARK MODE */
+
+.dark-button {
+    display: block;
+    margin: 15px auto;
+    background: #062f20;
+    color: white;
+    border: 1px solid #8ee8bd;
+    padding: 9px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dark-button:hover {
+    background: #8ee8bd;
+    color: #062f20;
+}
+
+body.dark-mode {
+    background: #10251c;
+    color: #e8f5ee;
+}
+
+body.dark-mode .notes-container {
+    background: #193529;
+    border: 1px solid #285240;
+}
+
+body.dark-mode h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .topic-box,
+body.dark-mode .formula-box {
+    background: #10251c;
+    color: #c7ddd1;
+}
+
+body.dark-mode .back-button {
+    background: #14845a;
+}
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧪 Enzymes Notes</h1>
+    <p>Biology Study Notes | BioResearch Hub</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="resources.html">Resources</a>
+    <a href="articles.html">Articles</a>
+    <a href="genetics.html">Genetics</a>
+    <a href="microbiology-note.html">Microbiology</a>
+    <a href="ecology.html">Ecology</a>
+    <a href="cell-biology.html">Cell Biology</a>
+    <a href="enzymes.html">Enzymes</a>
+
+    <button onclick="toggleDarkMode()" class="dark-button">
+        🌙 Dark Mode
+    </button>
+</nav>
+
+<main>
+
+    <div class="notes-container">
+
+        <h2>1. What Are Enzymes?</h2>
+
+        <p>
+            Enzymes are biological catalysts produced by living organisms.
+            They speed up chemical reactions in cells without being
+            permanently used up in the reactions.
+        </p>
+
+        <div class="topic-box">
+            <strong>Key idea:</strong>
+            Enzymes increase the rate of biochemical reactions by
+            lowering the activation energy required for the reaction.
+        </div>
+
+        <h2>2. Properties of Enzymes</h2>
+
+        <ul>
+            <li>Most enzymes are proteins.</li>
+            <li>They are biological catalysts.</li>
+            <li>They are highly specific in their action.</li>
+            <li>They are not permanently used up during reactions.</li>
+            <li>They work best under particular temperature and pH conditions.</li>
+            <li>Small amounts of enzymes can catalyse many reactions.</li>
+        </ul>
+
+        <h2>3. Enzyme and Substrate</h2>
+
+        <p>
+            The substance on which an enzyme acts is called the
+            <strong>substrate</strong>.
+        </p>
+
+        <p>
+            The part of an enzyme where the substrate binds is called
+            the <strong>active site</strong>.
+        </p>
+
+        <div class="formula-box">
+            Enzyme + Substrate → Enzyme-Substrate Complex → Enzyme + Product
+        </div>
+
+        <h2>4. Lock-and-Key Model</h2>
+
+        <p>
+            The lock-and-key model proposes that the active site of an
+            enzyme has a specific shape that fits its substrate.
+        </p>
+
+        <p>
+            This helps explain why enzymes are generally specific to
+            particular substrates.
+        </p>
+
+        <h2>5. Induced-Fit Model</h2>
+
+        <p>
+            The induced-fit model explains that the active site can
+            undergo a slight change in shape when the substrate binds.
+        </p>
+
+        <p>
+            This allows the enzyme and substrate to fit together more
+            effectively during the reaction.
+        </p>
+
+        <h2>6. Effect of Temperature</h2>
+
+        <p>
+            Increasing temperature generally increases enzyme activity
+            up to an optimum temperature.
+        </p>
+
+        <p>
+            Above the optimum temperature, the bonds maintaining the
+            enzyme's structure can be disrupted. The enzyme may become
+            <strong>denatured</strong> and lose its normal activity.
+        </p>
+
+        <h2>7. Effect of pH</h2>
+
+        <p>
+            Every enzyme has a pH range in which it works most effectively.
+            Changes in pH can affect the shape and charge of the active
+            site.
+        </p>
+
+        <p>
+            Extreme pH conditions can cause an enzyme to lose its normal
+            structure and activity.
+        </p>
+
+        <h2>8. Effect of Substrate Concentration</h2>
+
+        <p>
+            When substrate concentration increases, the rate of an
+            enzyme-controlled reaction usually increases until the
+            available active sites become occupied.
+        </p>
+
+        <p>
+            At this point, adding more substrate has little or no further
+            effect on the reaction rate if enzyme concentration remains
+            unchanged.
+        </p>
+
+        <h2>9. Enzyme Inhibitors</h2>
+
+        <p>
+            Enzyme inhibitors are substances that reduce or prevent
+            enzyme activity.
+        </p>
+
+        <ul>
+            <li>
+                <strong>Competitive inhibitors:</strong>
+                compete with the substrate for the active site.
+            </li>
+
+            <li>
+                <strong>Non-competitive inhibitors:</strong>
+                bind to another part of an enzyme and can alter the
+                shape of its active site.
+            </li>
+        </ul>
+
+        <h2>10. Examples of Enzymes</h2>
+
+        <ul>
+            <li><strong>Amylase:</strong> breaks down starch.</li>
+            <li><strong>Protease:</strong> breaks down proteins.</li>
+            <li><strong>Lipase:</strong> breaks down fats.</li>
+            <li><strong>Catalase:</strong> breaks down hydrogen peroxide.</li>
+        </ul>
+
+        <h2>11. Importance of Enzymes</h2>
+
+        <p>
+            Enzymes are essential because many chemical reactions required
+            for life would occur too slowly without them.
+        </p>
+
+        <ul>
+            <li>Digestion of food</li>
+            <li>Cellular respiration</li>
+            <li>DNA replication</li>
+            <li>Photosynthesis</li>
+            <li>Metabolism</li>
+            <li>Production of biological substances</li>
+        </ul>
+
+        <h2>12. Quick Revision</h2>
+
+        <ol>
+            <li>What is an enzyme?</li>
+            <li>What is a substrate?</li>
+            <li>What is the active site?</li>
+            <li>State two factors that affect enzyme activity.</li>
+            <li>What is denaturation?</li>
+            <li>Give three examples of enzymes.</li>
+        </ol>
+
+        <a href="resources.html" class="back-button">
+            ← Back to Resources
+        </a>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>© 2026 BioResearch Hub | Biological Research & Education</p>
+</footer>
+  <script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (document.body.classList.contains("dark-mode")) {
+        button.innerHTML = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        button.innerHTML = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+}
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (button) {
+        button.innerHTML = "☀️ Light Mode";
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cell Biology Notes | BioResearch Hub</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f9f6;
+            color: #173b2a;
+        }
+
+        header {
+            background: #062f20;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 34px;
+        }
+
+        header p {
+            color: #c7ddd1;
+        }
+
+        nav {
+            background: #062f20;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #8ee8bd;
+        }
+
+        .dark-button {
+            background: transparent;
+            color: white;
+            border: 1px solid #8ee8bd;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .intro h2 {
+            color: #0b5d3b;
+        }
+
+        .note-card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 18px;
+            border: 1px solid #dcebe3;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: 0.3s ease;
+        }
+
+        .note-card:hover,
+        .note-card:active {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .note-card h2 {
+            color: #0b5d3b;
+        }
+
+        .note-card h3 {
+            color: #14845a;
+        }
+
+        .note-card p,
+        .note-card li {
+            line-height: 1.7;
+        }
+
+        .back {
+            display: inline-block;
+            margin: 10px 0 40px;
+            color: #0b5d3b;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #062f20;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        body.dark-mode {
+            background: #10251c;
+            color: #e8f5ee;
+        }
+
+        body.dark-mode nav,
+        body.dark-mode footer {
+            background: #021c12;
+        }
+
+        body.dark-mode .intro,
+        body.dark-mode .note-card {
+            background: #193529;
+            color: #e8f5ee;
+            border-color: #285240;
+        }
+
+        body.dark-mode .intro h2,
+        body.dark-mode .note-card h2,
+        body.dark-mode .note-card h3 {
+            color: #8ee8bd;
+        }
+
+        body.dark-mode .back {
+            color: #8ee8bd;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .note-card,
+            .intro {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔬 Cell Biology Notes</h1>
+    <p>Explore cells, organelles, transport, and cell division</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="genetics.html">Genetics</a>
+    <a href="microbiology.html">Microbiology</a>
+    <a href="ecology.html">Ecology</a>
+    <a href="cell-biology.html">Cell Biology</a>
+    <a href="articles.html">Articles</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+
+    <button onclick="toggleDarkMode()" class="dark-button">
+        🌙 Dark Mode
+    </button>
+</nav>
+
+<main class="container">
+
+    <section class="intro">
+        <h2>Cell Biology Study Notes 🧫</h2>
+        <p>
+            Learn about the structure and functions of cells,
+            cellular transport, cell division, and cellular processes.
+        </p>
+    </section>
+
+    <section class="note-card">
+        <h2>1. Introduction to Cell Biology</h2>
+
+        <p>
+            Cell biology is the branch of biology concerned with the
+            study of cells, their structures, functions, and activities.
+        </p>
+
+        <p>
+            The cell is the basic structural and functional unit
+            of living organisms.
+        </p>
+    </section>
+
+    <section class="note-card">
+        <h2>2. Cell Theory</h2>
+
+        <p>Cell theory states that:</p>
+
+        <ul>
+            <li>All living organisms are made up of one or more cells.</li>
+            <li>The cell is the basic unit of life.</li>
+            <li>All cells come from pre-existing cells.</li>
+        </ul>
+    </section>
+
+    <section class="note-card">
+        <h2>3. Types of Cells</h2>
+
+        <h3>Prokaryotic Cells</h3>
+
+        <p>
+            Prokaryotic cells do not have a membrane-bound nucleus.
+            Bacteria are examples of prokaryotic organisms.
+        </p>
+
+        <h3>Eukaryotic Cells</h3>
+
+        <p>
+            Eukaryotic cells contain a membrane-bound nucleus and
+            other membrane-bound organelles.
+        </p>
+
+        <p>
+            Plants, animals, fungi, and many protists have
+            eukaryotic cells.
+        </p>
+    </section>
+
+    <section class="note-card">
+        <h2>4. Cell Organelles</h2>
+
+        <ul>
+            <li><strong>Nucleus</strong> — contains genetic material and controls cell activities.</li>
+            <li><strong>Mitochondria</strong> — site of most aerobic respiration and ATP production.</li>
+            <li><strong>Ribosomes</strong> — involved in protein synthesis.</li>
+            <li><strong>Endoplasmic reticulum</strong> — involved in the production and transport of substances.</li>
+            <li><strong>Golgi apparatus</strong> — modifies, sorts, and packages substances.</li>
+            <li><strong>Lysosomes</strong> — contain enzymes that help digest cellular materials.</li>
+            <li><strong>Chloroplasts</strong> — carry out photosynthesis in plant cells.</li>
+            <li><strong>Vacuoles</strong> — store water, dissolved substances, and other materials.</li>
+        </ul>
+    </section>
+
+    <section class="note-card">
+        <h2>5. Plant and Animal Cells</h2>
+
+        <p>
+            Plant and animal cells are both eukaryotic, but they
+            have some important differences.
+        </p>
+
+        <ul>
+            <li>Plant cells have a cell wall; animal cells do not.</li>
+            <li>Plant cells usually contain chloroplasts; animal cells do not.</li>
+            <li>Plant cells usually have a large central vacuole.</li>
+            <li>Animal cells generally have smaller vacuoles.</li>
+        </ul>
+    </section>
+
+    <section class="note-card">
+        <h2>6. Cell Membrane</h2>
+
+        <p>
+            The cell membrane surrounds the cell and controls the
+            movement of substances into and out of the cell.
+        </p>
+
+        <p>
+            It is selectively permeable, meaning that it allows
+            certain substances to pass through more easily than others.
+        </p>
+    </section>
+
+    <section class="note-card">
+        <h2>7. Movement of Substances</h2>
+
+        <h3>Diffusion</h3>
+
+        <p>
+            Diffusion is the net movement of particles from a region
+            of higher concentration to a region of lower concentration.
+        </p>
+
+        <h3>Osmosis</h3>
+
+        <p>
+            Osmosis is the movement of water molecules through a
+            selectively permeable membrane from a region of higher
+            water potential to a region of lower water potential.
+        </p>
+
+        <h3>Active Transport</h3>
+
+        <p>
+            Active transport is the movement of substances against
+            their concentration gradient using energy.
+        </p>
+    </section>
+
+    <section class="note-card">
+        <h2>8. Cell Division</h2>
+
+        <h3>Mitosis</h3>
+
+        <p>
+            Mitosis produces two genetically similar daughter cells.
+            It is important for growth, tissue repair, and asexual
+            reproduction in some organisms.
+        </p>
+
+        <h3>Meiosis</h3>
+
+        <p>
+            Meiosis produces cells with half the usual chromosome
+            number. It is involved in the formation of gametes in
+            organisms that reproduce sexually.
+        </p>
+    </section>
+
+    <section class="note-card">
+        <h2>9. Cellular Respiration</h2>
+
+        <p>
+            Cellular respiration is the process by which cells
+            release energy from food molecules.
+        </p>
+
+        <p>
+            In aerobic respiration, glucose is broken down in the
+            presence of oxygen to release energy.
+        </p>
+
+        <p>
+            The mitochondria are an important site of aerobic
+            respiration in eukaryotic cells.
+        </p>
+    </section>
+
+    <section class="note-card">
+        <h2>10. Cell Adaptations</h2>
+
+        <p>
+            Cells may have specialised structures that help them
+            perform particular functions efficiently.
+        </p>
+
+        <ul>
+            <li><strong>Red blood cells</strong> — specialised for transporting oxygen.</li>
+            <li><strong>Root hair cells</strong> — adapted for absorbing water and mineral ions.</li>
+            <li><strong>Nerve cells</strong> — specialised for transmitting electrical signals.</li>
+            <li><strong>Sperm cells</strong> — adapted for movement and delivery of genetic material.</li>
+        </ul>
+    </section>
+
+    <a href="resources.html" class="back">
+        ← Back to Resources
+    </a>
+
+</main>
+
+<footer>
+    <p>© 2026 BioResearch Hub | Biological Research & Education</p>
+</footer>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (document.body.classList.contains("dark-mode")) {
+        button.innerHTML = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        button.innerHTML = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+}
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (button) {
+        button.innerHTML = "☀️ Light Mode";
+    }
+}
+</script>
+
+</body>
+</html>

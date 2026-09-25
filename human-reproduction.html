@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Reproduction | BioResearch Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f9f6;
+            color: #26352d;
+            line-height: 1.7;
+            transition: 0.3s;
+        }
+
+        header {
+            background: linear-gradient(135deg, #063d27, #0b5d3b, #14845a);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 38px;
+        }
+
+        header p {
+            margin: 0;
+            color: #d9f3e6;
+        }
+
+        nav {
+            background: #062f20;
+            padding: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a,
+        .dark-button {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        nav a:hover,
+        .dark-button:hover {
+            color: #8ee8bd;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .intro,
+        .topic {
+            background: white;
+            border-radius: 18px;
+            border: 1px solid #dfe7e2;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        }
+
+        .intro {
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .topic {
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+
+        .intro h2,
+        .topic h2 {
+            color: #0b5d3b;
+        }
+
+        .topic h2 {
+            margin-top: 0;
+            font-size: 27px;
+        }
+
+        .topic h3 {
+            color: #14845a;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        .highlight {
+            background: #eaf7f0;
+            border-left: 5px solid #14845a;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .comparison {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .comparison th,
+        .comparison td {
+            border: 1px solid #cfded5;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison th {
+            background: #0b5d3b;
+            color: white;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 22px;
+            background: #0b5d3b;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #14845a;
+        }
+
+        footer {
+            background: #062f20;
+            color: #d9f3e6;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        body.dark-mode {
+            background: #10251c;
+            color: #dcebe3;
+        }
+
+        body.dark-mode .intro,
+        body.dark-mode .topic {
+            background: #193529;
+            border-color: #285240;
+        }
+
+        body.dark-mode .intro h2,
+        body.dark-mode .topic h2 {
+            color: #8ee8bd;
+        }
+
+        body.dark-mode .topic h3 {
+            color: #8ee8bd;
+        }
+
+        body.dark-mode .highlight {
+            background: #214636;
+        }
+
+        body.dark-mode .comparison td {
+            border-color: #3b5c4c;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .topic,
+            .intro {
+                padding: 22px;
+            }
+
+            .comparison {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧬 Human Reproduction</h1>
+    <p>Complete Biology Study Notes</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="resources.html">Resources</a>
+    <a href="articles.html">Articles</a>
+    <a href="genetics.html">Genetics</a>
+    <a href="ecology.html">Ecology</a>
+    <a href="cell-biology.html">Cell Biology</a>
+    <a href="enzymes.html">Enzymes</a>
+    <a href="wind.html">Wind</a>
+    <a href="dna-rna.html">DNA & RNA</a>
+    <a href="plant-reproduction.html">Plant Reproduction</a>
+
+    <button onclick="toggleDarkMode()" class="dark-button">
+        🌙 Dark Mode
+    </button>
+</nav>
+
+<main class="container">
+
+    <section class="intro">
+        <h2>What is Human Reproduction?</h2>
+
+        <p>
+            Human reproduction is the biological process through which
+            humans produce offspring. It involves the production of
+            reproductive cells, fertilization, development of the embryo,
+            and birth.
+        </p>
+
+        <div class="highlight">
+            <strong>Key idea:</strong>
+            Human reproduction is sexual reproduction and involves the
+            fusion of male and female gametes.
+        </div>
+    </section>
+
+
+    <section class="topic">
+        <h2>👨 Male Reproductive System</h2>
+
+        <p>
+            The male reproductive system produces sperm cells and
+            reproductive hormones and provides a pathway for sperm
+            to leave the body.
+        </p>
+
+        <h3>Main structures</h3>
+
+        <ul>
+            <li><strong>Testes:</strong> Produce sperm and testosterone.</li>
+            <li><strong>Scrotum:</strong> Holds and protects the testes and helps regulate their temperature.</li>
+            <li><strong>Epididymis:</strong> Stores and allows sperm to mature.</li>
+            <li><strong>Vas deferens:</strong> Transports sperm from the epididymis.</li>
+            <li><strong>Seminal vesicles:</strong> Add fluid containing nutrients to semen.</li>
+            <li><strong>Prostate gland:</strong> Adds fluid to semen.</li>
+            <li><strong>Urethra:</strong> Passage through which semen leaves the body.</li>
+            <li><strong>Penis:</strong> Organ through which semen can be delivered into the female reproductive tract.</li>
+        </ul>
+    </section>
+
+
+    <section class="topic">
+        <h2>👩 Female Reproductive System</h2>
+
+        <p>
+            The female reproductive system produces ova, provides the
+            site for fertilization, and supports the development of
+            the embryo and fetus.
+        </p>
+
+        <h3>Main structures</h3>
+
+        <ul>
+            <li><strong>Ovaries:</strong> Produce ova and female reproductive hormones.</li>
+            <li><strong>Fallopian tubes:</strong> Carry the ovum toward the uterus and are the usual site of fertilization.</li>
+            <li><strong>Uterus:</strong> Organ where the embryo implants and develops.</li>
+            <li><strong>Endometrium:</strong> Inner lining of the uterus.</li>
+            <li><strong>Cervix:</strong> Lower part of the uterus.</li>
+            <li><strong>Vagina:</strong> Muscular canal connecting the cervix to the outside of the body.</li>
+        </ul>
+    </section>
+
+
+    <section class="topic">
+        <h2>🧬 Gametes</h2>
+
+        <p>
+            Gametes are reproductive cells containing one set of
+            chromosomes.
+        </p>
+
+        <h3>Sperm Cell</h3>
+
+        <ul>
+            <li>Small and motile.</li>
+            <li>Produced in the testes.</li>
+            <li>Contains genetic material from the father.</li>
+            <li>Has a flagellum that helps it move.</li>
+        </ul>
+
+        <h3>Ovum</h3>
+
+        <ul>
+            <li>Larger than a sperm cell.</li>
+            <li>Produced by the ovaries.</li>
+            <li>Contains genetic material from the mother.</li>
+            <li>Provides cellular materials needed during the early stages of development.</li>
+        </ul>
+    </section>
+
+
+    <section class="topic">
+        <h2>🔬 Puberty</h2>
+
+        <p>
+            Puberty is the period during which a young person's body
+            undergoes physical and hormonal changes that lead to
+            reproductive maturity.
+        </p>
+
+        <h3>Changes in males may include:</h3>
+
+        <ul>
+            <li>Growth of the reproductive organs.</li>
+            <li>Production of sperm.</li>
+            <li>Deepening of the voice.</li>
+            <li>Growth of facial and body hair.</li>
+        </ul>
+
+        <h3>Changes in females may include:</h3>
+
+        <ul>
+            <li>Development of the breasts.</li>
+            <li>Beginning of menstruation.</li>
+            <li>Development and maturation of reproductive organs.</li>
+            <li>Changes in body shape and growth of body hair.</li>
+        </ul>
+    </section>
+
+
+    <section class="topic">
+        <h2>🌸 Menstrual Cycle</h2>
+
+        <p>
+            The menstrual cycle is a series of changes in the female
+            reproductive system that prepares the body for possible
+            pregnancy.
+        </p>
+
+        <h3>Main events</h3>
+
+        <ul>
+            <li><strong>Menstruation:</strong> Shedding of the uterine lining.</li>
+            <li><strong>Follicular phase:</strong> Follicles develop in the ovary.</li>
+            <li><strong>Ovulation:</strong> Release of an ovum from an ovary.</li>
+            <li><strong>Luteal phase:</strong> Hormonal changes prepare the uterus for possible implantation.</li>
+        </ul>
+
+        <div class="highlight">
+            <strong>Important:</strong>
+            Ovulation generally occurs around the middle of a typical
+            menstrual cycle, but the exact timing varies between people
+            and between cycles.
+        </div>
+    </section>
+
+
+    <section class="topic">
+        <h2>🧬 Fertilization</h2>
+
+        <p>
+            Fertilization is the fusion of a sperm cell and an ovum
+            to form a diploid zygote.
+        </p>
+
+        <p>
+            In humans, fertilization usually occurs in the fallopian tube.
+            The zygote then begins dividing as it moves toward the uterus.
+        </p>
+    </section>
+
+
+    <section class="topic">
+        <h2>🌱 Implantation</h2>
+
+        <p>
+            Implantation is the attachment of the developing embryo
+            to the lining of the uterus.
+        </p>
+
+        <p>
+            The embryo continues to develop within the uterus and
+            receives nutrients and oxygen through structures that
+            develop during pregnancy.
+        </p>
+    </section>
+
+
+    <section class="topic">
+        <h2>👶 Pregnancy and Development</h2>
+
+        <p>
+            Pregnancy begins after implantation and involves the
+            development of the embryo and later the fetus inside
+            the uterus.
+        </p>
+
+        <h3>Placenta</h3>
+
+        <p>
+            The placenta is an organ that develops during pregnancy.
+            It allows exchange of substances between the mother's
+            blood and the developing fetus without normally allowing
+            the two blood supplies to mix directly.
+        </p>
+
+        <h3>Umbilical Cord</h3>
+
+        <p>
+            The umbilical cord connects the fetus to the placenta and
+            carries blood between them.
+        </p>
+
+        <h3>Amniotic Fluid</h3>
+
+        <p>
+            The fetus is surrounded by amniotic fluid, which helps
+            cushion and protect it.
+        </p>
+    </section>
+
+
+    <section class="topic">
+        <h2>🧪 Reproductive Hormones</h2>
+
+        <ul>
+            <li><strong>FSH:</strong> Helps stimulate development of ovarian follicles and sperm production.</li>
+            <li><strong>LH:</strong> Helps regulate reproductive processes and triggers ovulation in females.</li>
+            <li><strong>Estrogen:</strong> Important for female reproductive development and regulation of the menstrual cycle.</li>
+            <li><strong>Progesterone:</strong> Helps maintain the uterine lining during the menstrual cycle and pregnancy.</li>
+            <li><strong>Testosterone:</strong> Important for male reproductive development and sperm production.</li>
+        </ul>
+    </section>
+
+
+    <section class="topic">
+        <h2>📊 Male and Female Reproductive Systems</h2>
+
+        <table class="comparison">
+            <tr>
+                <th>Male</th>
+                <th>Female</th>
+            </tr>
+
+            <tr>
+                <td>Produces sperm.</td>
+                <td>Produces ova.</td>
+            </tr>
+
+            <tr>
+                <td>Main reproductive organ: testes.</td>
+                <td>Main reproductive organs: ovaries.</td>
+            </tr>
+
+            <tr>
+                <td>Produces testosterone.</td>
+                <td>Produces estrogen and progesterone.</td>
+            </tr>
+
+            <tr>
+                <td>Sperm production begins at puberty and can continue throughout adult life.</td>
+                <td>Ova are released during reproductive cycles until menopause.</td>
+            </tr>
+        </table>
+    </section>
+
+
+    <section class="topic">
+        <h2>📝 Quick Revision</h2>
+
+        <ul>
+            <li>Human reproduction is sexual reproduction.</li>
+            <li>Sperm is the male gamete.</li>
+            <li>Ovum is the female gamete.</li>
+            <li>Testes produce sperm and testosterone.</li>
+            <li>Ovaries produce ova and female reproductive hormones.</li>
+            <li>Fertilization usually occurs in the fallopian tube.</li>
+            <li>Fertilization produces a diploid zygote.</li>
+            <li>Implantation occurs in the uterine lining.</li>
+            <li>The placenta supports exchange between mother and fetus.</li>
+            <li>FSH and LH are important reproductive hormones.</li>
+        </ul>
+    </section>
+
+    <a href="resources.html" class="button">← Back to Resources</a>
+
+</main>
+
+<footer>
+    <p>© 2026 BioResearch Hub | Biology Learning & Research</p>
+</footer>
+
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+        }
+    }
+
+    if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+    }
+</script>
+
+</body>
+</html>

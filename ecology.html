@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ecology Research | BioResearch Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f9f6;
+            color: #173b2a;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #063d27, #0b5d3b, #14845a);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #062f20;
+            padding: 16px 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #8ee8bd;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 45px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            margin-bottom: 35px;
+        }
+
+        .intro h2 {
+            color: #0b5d3b;
+            margin-bottom: 15px;
+        }
+
+        .topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .topic-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid #e3eee8;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .topic-card span {
+            font-size: 40px;
+        }
+
+        .topic-card h3 {
+            color: #0b5d3b;
+            margin: 12px 0;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 15px;
+            background: linear-gradient(135deg, #0b5d3b, #14845a);
+            color: white;
+            text-decoration: none;
+            padding: 11px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .dark-button {
+    background: transparent;
+    color: white;
+    border: 1px solid #8ee8bd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: 0.3s;
+}
+
+.dark-button:hover {
+    background: #8ee8bd;
+    color: #062f20;
+}
+
+body.dark-mode {
+    background: #10251c;
+    color: #e8f5ee;
+}
+
+body.dark-mode .intro,
+body.dark-mode .topic-card {
+    background: #193529;
+    color: #e8f5ee;
+    border-color: #285240;
+}
+
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode nav,
+body.dark-mode footer {
+    background: #021c12;
+}
+
+        footer {
+            margin-top: 70px;
+            background: #062f20;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 6px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+      /* ==============================
+   ECOLOGY STUDY NOTES
+============================== */
+
+.study-notes {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.study-notes > h2 {
+    text-align: center;
+    color: #0b5d3b;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.note-topic {
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    border: 1px solid #dfe7e2;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    transition: 0.3s ease;
+}
+
+.note-topic:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+    border-color: #b9dccb;
+}
+
+.note-topic h3 {
+    color: #0b5d3b;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.note-topic h4 {
+    color: #14845a;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.note-topic p {
+    color: #536b5e;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.note-topic ul,
+.note-topic ol {
+    color: #536b5e;
+    line-height: 1.9;
+    padding-left: 25px;
+}
+
+.note-topic li {
+    margin-bottom: 7px;
+}
+
+.note-topic strong {
+    color: #0b5d3b;
+}
+
+.note-topic .example {
+    background: #eaf7f0;
+    padding: 18px;
+    border-left: 4px solid #14845a;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Dark Mode */
+
+body.dark-mode .study-notes > h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .note-topic {
+    background: #193529;
+    border-color: #285240;
+}
+
+body.dark-mode .note-topic h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .note-topic h4 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .note-topic p,
+body.dark-mode .note-topic ul,
+body.dark-mode .note-topic ol {
+    color: #c7ddd1;
+}
+
+body.dark-mode .note-topic strong {
+    color: #8ee8bd;
+}
+
+body.dark-mode .note-topic .example {
+    background: #10251c;
+    border-left-color: #8ee8bd;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .study-notes {
+        padding: 20px 15px;
+    }
+
+    .study-notes > h2 {
+        font-size: 27px;
+    }
+
+    .note-topic {
+        padding: 24px;
+    }
+
+    .note-topic h3 {
+        font-size: 21px;
+    }
+
+    .note-topic p,
+    .note-topic li {
+        font-size: 15px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌱 Ecology Research</h1>
+    <p>Exploring organisms, ecosystems and the environment</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="genetics.html">Genetics</a>
+    <a href="microbiology.html">Microbiology</a>
+    <a href="ecology.html">Ecology</a>
+    <a href="cell-biology.html">Cell Biology</a>
+    <a href="articles.html">Articles</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+
+    <button onclick="toggleDarkMode()" class="dark-button">
+        🌙 Dark Mode
+    </button>
+</nav>
+
+<main class="container">
+
+    <section class="intro">
+        <h2>About Ecology</h2>
+
+        <p>
+            Ecology is the study of how living organisms interact
+            with one another and with their physical environment.
+            It helps us understand ecosystems, biodiversity,
+            food webs and environmental change.
+        </p>
+    </section>
+
+    <section class="topics">
+
+        <div class="topic-card">
+            <span>🌳</span>
+            <h3>Ecosystems</h3>
+            <p>
+                Study how organisms and their physical environment
+                interact within ecosystems.
+            </p>
+        </div>
+
+        <div class="topic-card">
+            <span>🦋</span>
+            <h3>Biodiversity</h3>
+            <p>
+                Explore the variety of living organisms and the
+                importance of biodiversity to ecosystems.
+            </p>
+        </div>
+
+        <div class="topic-card">
+            <span>🌎</span>
+            <h3>Environmental Change</h3>
+            <p>
+                Learn how environmental changes can affect organisms,
+                habitats and ecosystems.
+            </p>
+        </div>
+
+        <div class="topic-card">
+            <span>🦁</span>
+            <h3>Food Chains</h3>
+            <p>
+                Understand how energy and nutrients move between
+                organisms through food chains and food webs.
+            </p>
+        </div>
+
+    </section>
+          <section class="study-notes">
+
+    <h2>🌍 Ecology: Detailed Study Notes</h2>
+
+    <div class="note-topic">
+        <h3>1. Meaning of Ecology</h3>
+
+        <p>
+            Ecology is the branch of biology that studies the relationships
+            between living organisms and their physical environment.
+        </p>
+
+        <p>
+            It examines how organisms interact with one another and with
+            factors such as light, temperature, water, soil, air, and
+            nutrients.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>2. Levels of Ecological Organization</h3>
+
+        <p>Ecological organization can be arranged from simple to complex:</p>
+
+        <ol>
+            <li><strong>Organism:</strong> A single living individual.</li>
+            <li><strong>Population:</strong> Organisms of the same species living in an area.</li>
+            <li><strong>Community:</strong> Different populations living and interacting together.</li>
+            <li><strong>Ecosystem:</strong> A community interacting with its physical environment.</li>
+            <li><strong>Biome:</strong> A large region characterized by particular climate and vegetation.</li>
+            <li><strong>Biosphere:</strong> The part of Earth where life exists.</li>
+        </ol>
+    </div>
+
+    <div class="note-topic">
+        <h3>3. Habitat</h3>
+
+        <p>
+            A habitat is the natural place where an organism lives and
+            obtains the conditions and resources necessary for survival.
+        </p>
+
+        <p><strong>Examples:</strong></p>
+
+        <ul>
+            <li>Fish → aquatic habitat</li>
+            <li>Earthworm → soil habitat</li>
+            <li>Monkey → forest habitat</li>
+            <li>Frog → freshwater and terrestrial habitats</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>4. Ecological Niche</h3>
+
+        <p>
+            An ecological niche describes the role an organism plays in
+            its ecosystem, including how it obtains food, uses resources,
+            and interacts with other organisms.
+        </p>
+
+        <p>
+            Two organisms may share a habitat but have different niches.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>5. Abiotic Factors</h3>
+
+        <p>
+            Abiotic factors are the non-living components of an ecosystem.
+        </p>
+
+        <ul>
+            <li>☀️ Light intensity</li>
+            <li>🌡️ Temperature</li>
+            <li>💧 Water availability</li>
+            <li>🌧️ Rainfall</li>
+            <li>🌬️ Wind</li>
+            <li>🌱 Soil type</li>
+            <li>🧂 Mineral salts</li>
+            <li>💨 Humidity</li>
+            <li>⚗️ Soil pH</li>
+        </ul>
+
+        <p>
+            These factors influence where organisms can live, their growth,
+            reproduction, and survival.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>6. Biotic Factors</h3>
+
+        <p>
+            Biotic factors are the living components of an ecosystem.
+        </p>
+
+        <ul>
+            <li>Plants</li>
+            <li>Animals</li>
+            <li>Fungi</li>
+            <li>Bacteria</li>
+            <li>Other microorganisms</li>
+        </ul>
+
+        <p>
+            Organisms interact through competition, predation, parasitism,
+            mutualism, and other relationships.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>7. Population</h3>
+
+        <p>
+            A population is a group of organisms of the same species
+            occupying a particular area at a particular time.
+        </p>
+
+        <p>
+            Population size can change because of:
+        </p>
+
+        <ul>
+            <li>Births</li>
+            <li>Deaths</li>
+            <li>Immigration</li>
+            <li>Emigration</li>
+        </ul>
+
+        <p>
+            <strong>Population change = Births + Immigration − Deaths − Emigration</strong>
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>8. Community</h3>
+
+        <p>
+            A community consists of different populations of organisms
+            living and interacting within the same area.
+        </p>
+
+        <p>
+            For example, a forest community may contain trees, grasses,
+            insects, birds, fungi, bacteria, and mammals.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>9. Ecosystem</h3>
+
+        <p>
+            An ecosystem consists of living organisms and the non-living
+            environment with which they interact.
+        </p>
+
+        <p>
+            Ecosystems may be natural or artificial.
+        </p>
+
+        <ul>
+            <li>🌳 Forest ecosystem</li>
+            <li>🏞️ Grassland ecosystem</li>
+            <li>🌊 Pond ecosystem</li>
+            <li>🌊 Marine ecosystem</li>
+            <li>🌾 Agricultural ecosystem</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>10. Producers, Consumers and Decomposers</h3>
+
+        <h4>🌱 Producers</h4>
+        <p>
+            Producers make their own food, usually through photosynthesis.
+            Green plants and algae are common examples.
+        </p>
+
+        <h4>🐇 Consumers</h4>
+        <p>
+            Consumers obtain energy by feeding on other organisms.
+        </p>
+
+        <ul>
+            <li>Primary consumers → herbivores</li>
+            <li>Secondary consumers → feed on primary consumers</li>
+            <li>Tertiary consumers → feed on other consumers</li>
+        </ul>
+
+        <h4>🍄 Decomposers</h4>
+        <p>
+            Decomposers break down dead organisms and organic materials,
+            releasing nutrients back into the environment.
+        </p>
+
+        <p>
+            Examples include bacteria and fungi.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>11. Food Chain</h3>
+
+        <p>
+            A food chain shows the transfer of food energy from one organism
+            to another.
+        </p>
+
+        <p class="example">
+            🌱 Grass → 🦗 Grasshopper → 🐸 Frog → 🐍 Snake → 🦅 Hawk
+        </p>
+
+        <p>
+            The arrows show the direction of energy transfer.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>12. Food Web</h3>
+
+        <p>
+            A food web is a network of interconnected food chains within
+            an ecosystem.
+        </p>
+
+        <p>
+            Food webs usually provide a more realistic representation of
+            feeding relationships because organisms often have more than
+            one food source.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>13. Energy Flow in an Ecosystem</h3>
+
+        <p>
+            Energy enters most ecosystems from the Sun. Plants capture
+            some of this energy during photosynthesis.
+        </p>
+
+        <p>
+            Energy is then transferred through different feeding levels.
+            Some energy is lost as heat during metabolic activities.
+        </p>
+
+        <p>
+            Therefore, energy flow through an ecosystem is generally
+            <strong>one-way</strong>.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>14. Ecological Pyramids</h3>
+
+        <p>Ecological pyramids represent relationships between trophic levels.</p>
+
+        <ul>
+            <li><strong>Pyramid of numbers:</strong> Shows the number of organisms at each trophic level.</li>
+            <li><strong>Pyramid of biomass:</strong> Shows the total mass of organisms at each trophic level.</li>
+            <li><strong>Pyramid of energy:</strong> Shows the amount of energy available at each trophic level.</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>15. Ecological Relationships</h3>
+
+        <ul>
+            <li>
+                <strong>Predation:</strong> One organism kills and feeds on another.
+            </li>
+
+            <li>
+                <strong>Competition:</strong> Organisms compete for limited resources.
+            </li>
+
+            <li>
+                <strong>Parasitism:</strong> One organism benefits while the host is harmed.
+            </li>
+
+            <li>
+                <strong>Mutualism:</strong> Both organisms benefit.
+            </li>
+
+            <li>
+                <strong>Commensalism:</strong> One benefits while the other is generally unaffected.
+            </li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>16. Biodiversity</h3>
+
+        <p>
+            Biodiversity refers to the variety of living organisms in an
+            area or on Earth.
+        </p>
+
+        <p>It includes:</p>
+
+        <ul>
+            <li>Genetic diversity</li>
+            <li>Species diversity</li>
+            <li>Ecosystem diversity</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>17. Conservation</h3>
+
+        <p>
+            Conservation involves protecting and managing natural resources
+            and living organisms so they can continue to exist and reproduce.
+        </p>
+
+        <p><strong>Examples include:</strong></p>
+
+        <ul>
+            <li>🌳 Afforestation</li>
+            <li>🦁 Protection of wildlife</li>
+            <li>♻️ Recycling</li>
+            <li>🌱 Establishment of protected areas</li>
+            <li>🚫 Prevention of illegal hunting</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>18. Pollution</h3>
+
+        <p>
+            Pollution is the introduction of harmful substances or forms
+            of energy into the environment.
+        </p>
+
+        <ul>
+            <li>Air pollution</li>
+            <li>Water pollution</li>
+            <li>Soil pollution</li>
+            <li>Noise pollution</li>
+        </ul>
+
+        <p>
+            Pollution can affect organisms, habitats, food chains,
+            biodiversity, and human health.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>19. Quick Ecology Revision</h3>
+
+        <ul>
+            <li><strong>Ecology:</strong> Study of organisms and their environment.</li>
+            <li><strong>Habitat:</strong> Place where an organism lives.</li>
+            <li><strong>Niche:</strong> Role of an organism in its ecosystem.</li>
+            <li><strong>Population:</strong> Members of one species in an area.</li>
+            <li><strong>Community:</strong> Different populations interacting.</li>
+            <li><strong>Ecosystem:</strong> Community plus its physical environment.</li>
+            <li><strong>Producer:</strong> Makes its own food.</li>
+            <li><strong>Consumer:</strong> Obtains food from other organisms.</li>
+            <li><strong>Decomposer:</strong> Breaks down dead organic matter.</li>
+            <li><strong>Biodiversity:</strong> Variety of life.</li>
+        </ul>
+    </div>
+
+</section> 
+  <section class="study-notes">
+
+    <h2>🌍 Ecology: Advanced Study Notes</h2>
+
+    <div class="note-topic">
+        <h3>20. Population Density</h3>
+
+        <p>
+            Population density is the number of individuals of a species
+            living in a given area or volume.
+        </p>
+
+        <p class="example">
+            Population Density = Number of organisms ÷ Area occupied
+        </p>
+
+        <p>
+            Population density can be affected by food availability,
+            predation, disease, competition, climate, and availability of
+            suitable habitats.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>21. Factors Affecting Population Size</h3>
+
+        <ul>
+            <li><strong>Birth rate:</strong> Increases population size.</li>
+            <li><strong>Death rate:</strong> Decreases population size.</li>
+            <li><strong>Immigration:</strong> Movement of organisms into a population.</li>
+            <li><strong>Emigration:</strong> Movement of organisms out of a population.</li>
+            <li><strong>Competition:</strong> Reduces access to limited resources.</li>
+            <li><strong>Predation:</strong> Can reduce prey populations.</li>
+            <li><strong>Disease:</strong> Can increase mortality.</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>22. Carrying Capacity</h3>
+
+        <p>
+            Carrying capacity is the maximum population size that an
+            environment can support sustainably with the available
+            resources.
+        </p>
+
+        <p>
+            If a population exceeds the carrying capacity, competition
+            for resources may increase and population size may decline.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>23. Ecological Succession</h3>
+
+        <p>
+            Ecological succession is the gradual change in the composition
+            and structure of a biological community over time.
+        </p>
+
+        <h4>Primary Succession</h4>
+
+        <p>
+            Primary succession begins in an area where there was previously
+            little or no established soil, such as newly exposed rock.
+        </p>
+
+        <h4>Secondary Succession</h4>
+
+        <p>
+            Secondary succession occurs where an existing community has
+            been disturbed but soil remains.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>24. Carbon Cycle</h3>
+
+        <p>
+            Carbon continuously moves between organisms and the physical
+            environment.
+        </p>
+
+        <ul>
+            <li>Plants remove carbon dioxide from the atmosphere during photosynthesis.</li>
+            <li>Animals obtain carbon by feeding on plants or other animals.</li>
+            <li>Respiration returns carbon dioxide to the atmosphere.</li>
+            <li>Decomposition returns carbon to the environment.</li>
+            <li>Combustion releases carbon dioxide into the atmosphere.</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>25. Water Cycle</h3>
+
+        <p>
+            The water cycle describes the continuous movement of water
+            between the atmosphere, land, oceans, and living organisms.
+        </p>
+
+        <ul>
+            <li><strong>Evaporation:</strong> Liquid water changes into water vapour.</li>
+            <li><strong>Transpiration:</strong> Plants release water vapour.</li>
+            <li><strong>Condensation:</strong> Water vapour forms tiny water droplets.</li>
+            <li><strong>Precipitation:</strong> Water falls as rain or other forms of precipitation.</li>
+            <li><strong>Infiltration:</strong> Water enters the soil.</li>
+            <li><strong>Runoff:</strong> Water flows over the land surface.</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>26. Nitrogen Cycle</h3>
+
+        <p>
+            Nitrogen is essential for the production of proteins and nucleic
+            acids in living organisms.
+        </p>
+
+        <p>
+            Atmospheric nitrogen cannot be used directly by most organisms.
+            Certain microorganisms help convert nitrogen into forms that
+            plants can absorb.
+        </p>
+
+        <ul>
+            <li>Nitrogen fixation</li>
+            <li>Nitrification</li>
+            <li>Assimilation</li>
+            <li>Ammonification</li>
+            <li>Denitrification</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>27. Trophic Levels</h3>
+
+        <p>
+            A trophic level represents the feeding position occupied by an
+            organism in a food chain or food web.
+        </p>
+
+        <ol>
+            <li>Producers</li>
+            <li>Primary consumers</li>
+            <li>Secondary consumers</li>
+            <li>Tertiary consumers</li>
+        </ol>
+
+        <p>
+            Energy generally decreases as it moves from one trophic level
+            to the next because organisms use energy for life processes and
+            much of it is released as heat.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>28. Human Activities and Ecosystems</h3>
+
+        <p>
+            Human activities can significantly change natural ecosystems.
+        </p>
+
+        <ul>
+            <li>Deforestation</li>
+            <li>Mining</li>
+            <li>Urbanization</li>
+            <li>Industrial activities</li>
+            <li>Agriculture</li>
+            <li>Overfishing</li>
+            <li>Pollution</li>
+            <li>Introduction of invasive species</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>29. Deforestation</h3>
+
+        <p>
+            Deforestation is the removal of forests, often to obtain land
+            for agriculture, settlements, roads, or other human activities.
+        </p>
+
+        <p><strong>Possible effects include:</strong></p>
+
+        <ul>
+            <li>Loss of habitats</li>
+            <li>Reduction in biodiversity</li>
+            <li>Soil erosion</li>
+            <li>Changes in the water cycle</li>
+            <li>Increased carbon dioxide in the atmosphere</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>30. Climate Change and Ecosystems</h3>
+
+        <p>
+            Changes in climate can affect temperature, rainfall patterns,
+            habitats, species distributions, and the timing of biological
+            events.
+        </p>
+
+        <p>
+            Species may respond by changing their distribution, behaviour,
+            or seasonal activities. Species that cannot adapt or relocate
+            may face increased ecological pressure.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>31. Conservation Methods</h3>
+
+        <h4>In-situ Conservation</h4>
+
+        <p>
+            Protecting organisms within their natural habitats.
+        </p>
+
+        <p>
+            Examples include national parks, wildlife reserves, and
+            protected forests.
+        </p>
+
+        <h4>Ex-situ Conservation</h4>
+
+        <p>
+            Protecting organisms outside their natural habitats.
+        </p>
+
+        <p>
+            Examples include zoos, botanical gardens, seed banks, and
+            gene banks.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>32. Ecology Exam Quick Questions</h3>
+
+        <ol>
+            <li>What is ecology?</li>
+            <li>Differentiate between a habitat and a niche.</li>
+            <li>What is a population?</li>
+            <li>State four abiotic factors.</li>
+            <li>What is a food web?</li>
+            <li>Explain the importance of decomposers.</li>
+            <li>What is biodiversity?</li>
+            <li>Differentiate between primary and secondary succession.</li>
+            <li>State three causes of deforestation.</li>
+            <li>Differentiate between in-situ and ex-situ conservation.</li>
+        </ol>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 BioResearch Hub 🧬</p>
+</footer>
+
+  <script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (document.body.classList.contains("dark-mode")) {
+        button.innerHTML = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        button.innerHTML = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+}
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (button) {
+        button.innerHTML = "☀️ Light Mode";
+    }
+}
+</script>
+
+</body>
+</html>

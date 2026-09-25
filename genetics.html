@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetics Research | BioResearch Hub</title>
+
+    <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f9f6;
+    color: #173b2a;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #063d27, #0b5d3b, #14845a);
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+/* NAVIGATION */
+nav {
+    background: #062f20;
+    padding: 16px 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #8ee8bd;
+}
+
+/* MAIN CONTAINER */
+.container {
+    max-width: 1050px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+/* HEADINGS */
+h2 {
+    color: #0b5d3b;
+}
+
+h3 {
+    color: #0b5d3b;
+}
+
+/* CARDS */
+.card,
+.article-card,
+.resource-card,
+.contact-box,
+.article,
+.topic-card {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    border: 1px solid #e3eee8;
+    transition: 0.3s;
+}
+
+.card:hover,
+.article-card:hover,
+.resource-card:hover,
+.topic-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* BUTTONS */
+.button,
+.read,
+.back {
+    display: inline-block;
+    background: linear-gradient(135deg, #0b5d3b, #14845a);
+    color: white;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none;
+}
+
+.button:hover,
+.read:hover,
+.back:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(11,93,59,0.25);
+}
+
+/* FORM */
+input,
+textarea {
+    border: 1px solid #c8d8cf;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #8ee8bd;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 70px;
+    background: #062f20;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.7s ease;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    header {
+        padding: 45px 15px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 6px;
+    }
+
+    .container {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+}
+      .dark-button {
+    background: transparent;
+    color: white;
+    border: 1px solid #8ee8bd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: 0.3s;
+}
+
+.dark-button:hover {
+    background: #8ee8bd;
+    color: #062f20;
+}
+
+.dark-mode {
+    background: #10251c;
+    color: #e8f5ee;
+}
+
+.dark-mode .card,
+.dark-mode .topic-card {
+    background: #193529;
+    border-color: #285240;
+}
+
+.dark-mode h2,
+.dark-mode h3 {
+    color: #8ee8bd;
+}/* ==============================
+   GENETICS STUDY NOTES
+============================== */
+
+.study-notes {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.study-notes > h2 {
+    text-align: center;
+    color: #0b5d3b;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.note-topic {
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    border: 1px solid #dfe7e2;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    transition: 0.3s ease;
+}
+
+.note-topic:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+    border-color: #b9dccb;
+}
+
+.note-topic h3 {
+    color: #0b5d3b;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.note-topic h4 {
+    color: #14845a;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.note-topic p {
+    color: #536b5e;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.note-topic ul,
+.note-topic ol {
+    color: #536b5e;
+    line-height: 1.9;
+    padding-left: 25px;
+}
+
+.note-topic li {
+    margin-bottom: 7px;
+}
+
+.note-topic strong {
+    color: #0b5d3b;
+}
+
+.note-topic .example {
+    background: #eaf7f0;
+    padding: 18px;
+    border-left: 4px solid #14845a;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Dark Mode */
+
+body.dark-mode .study-notes > h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .note-topic {
+    background: #193529;
+    border-color: #285240;
+}
+
+body.dark-mode .note-topic h3,
+body.dark-mode .note-topic h4 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .note-topic p,
+body.dark-mode .note-topic ul,
+body.dark-mode .note-topic ol {
+    color: #c7ddd1;
+}
+
+body.dark-mode .note-topic strong {
+    color: #8ee8bd;
+}
+
+body.dark-mode .note-topic .example {
+    background: #10251c;
+    border-left-color: #8ee8bd;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .study-notes {
+        padding: 20px 15px;
+    }
+
+    .study-notes > h2 {
+        font-size: 27px;
+    }
+
+    .note-topic {
+        padding: 24px;
+    }
+
+    .note-topic h3 {
+        font-size: 21px;
+    }
+
+    .note-topic p,
+    .note-topic li {
+        font-size: 15px;
+    }
+}
+     /* ==============================
+   INTERACTIVE PUNNETT SQUARE
+============================== */
+
+.punnett-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 35px;
+    background: linear-gradient(135deg, #eaf7f0, #ffffff);
+    border-radius: 25px;
+    border: 1px solid #dfe7e2;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.punnett-section h2 {
+    text-align: center;
+    color: #0b5d3b;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.punnett-intro {
+    text-align: center;
+    color: #536b5e;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.punnett-controls {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.parent-control {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.parent-control label {
+    color: #0b5d3b;
+    font-weight: bold;
+}
+
+.parent-control select {
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: 1px solid #b9dccb;
+    font-size: 16px;
+    background: white;
+}
+
+.punnett-table-wrapper {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+.punnett-table {
+    border-collapse: collapse;
+    min-width: 320px;
+    text-align: center;
+}
+
+.punnett-table th,
+.punnett-table td {
+    border: 2px solid #14845a;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.punnett-table th {
+    background: #dff2e8;
+    color: #0b5d3b;
+}
+
+.punnett-table td {
+    background: white;
+    color: #0b5d3b;
+    font-weight: bold;
+}
+
+.punnett-result {
+    margin-top: 30px;
+    padding: 22px;
+    background: #ffffff;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #dfe7e2;
+}
+
+.punnett-result h3 {
+    color: #0b5d3b;
+    margin-bottom: 12px;
+}
+
+.punnett-result p {
+    color: #536b5e;
+    line-height: 1.7;
+}
+
+/* Dark mode */
+
+body.dark-mode .punnett-section {
+    background: linear-gradient(135deg, #193529, #10251c);
+    border-color: #285240;
+}
+
+body.dark-mode .punnett-section h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .punnett-intro {
+    color: #c7ddd1;
+}
+
+body.dark-mode .parent-control label {
+    color: #8ee8bd;
+}
+
+body.dark-mode .parent-control select {
+    background: #193529;
+    color: #ffffff;
+    border-color: #285240;
+}
+
+body.dark-mode .punnett-table th {
+    background: #285240;
+    color: #8ee8bd;
+}
+
+body.dark-mode .punnett-table td {
+    background: #193529;
+    color: #8ee8bd;
+}
+
+body.dark-mode .punnett-result {
+    background: #193529;
+    border-color: #285240;
+}
+
+body.dark-mode .punnett-result h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .punnett-result p {
+    color: #c7ddd1;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .punnett-section {
+        margin: 40px 15px;
+        padding: 25px 18px;
+    }
+
+    .punnett-section h2 {
+        font-size: 25px;
+    }
+
+    .punnett-controls {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .parent-control select {
+        width: 100%;
+    }
+
+    .punnett-table th,
+    .punnett-table td {
+        padding: 15px;
+        font-size: 17px;
+    }
+} 
+    /* ==============================
+   GENETICS QUIZ
+============================== */
+
+.genetics-quiz {
+    max-width: 900px;
+    margin: 70px auto;
+    padding: 35px;
+    background: linear-gradient(135deg, #eaf7f0, #ffffff);
+    border-radius: 25px;
+    border: 1px solid #dfe7e2;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.genetics-quiz > h2 {
+    text-align: center;
+    color: #0b5d3b;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.quiz-intro {
+    text-align: center;
+    color: #536b5e;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.quiz-question {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    border: 1px solid #dfe7e2;
+}
+
+.quiz-question h3 {
+    color: #0b5d3b;
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.quiz-question label {
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: #f4faf7;
+    color: #536b5e;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.quiz-question label:hover {
+    background: #eaf7f0;
+    transform: translateX(4px);
+}
+
+.quiz-question input {
+    margin-right: 10px;
+}
+
+.quiz-button {
+    display: block;
+    margin: 30px auto 0;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 12px;
+    background: #0b5d3b;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.quiz-button:hover {
+    background: #14845a;
+    transform: translateY(-2px);
+}
+
+.quiz-result {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.7;
+    display: none;
+}
+
+/* Dark Mode */
+
+body.dark-mode .genetics-quiz {
+    background: linear-gradient(135deg, #193529, #10251c);
+    border-color: #285240;
+}
+
+body.dark-mode .genetics-quiz > h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .quiz-intro {
+    color: #c7ddd1;
+}
+
+body.dark-mode .quiz-question {
+    background: #193529;
+    border-color: #285240;
+}
+
+body.dark-mode .quiz-question h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .quiz-question label {
+    background: #10251c;
+    color: #c7ddd1;
+}
+
+body.dark-mode .quiz-question label:hover {
+    background: #285240;
+}
+
+body.dark-mode .quiz-button {
+    background: #14845a;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .genetics-quiz {
+        margin: 45px 15px;
+        padding: 25px 18px;
+    }
+
+    .genetics-quiz > h2 {
+        font-size: 26px;
+    }
+
+    .quiz-question {
+        padding: 20px;
+    }
+
+    .quiz-question h3 {
+        font-size: 17px;
+    }
+}  
+      /* ==============================
+   DOWNLOAD GENETICS NOTES
+============================== */
+
+.download-notes {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 35px;
+    text-align: center;
+    background: linear-gradient(135deg, #eaf7f0, #ffffff);
+    border-radius: 25px;
+    border: 1px solid #dfe7e2;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.download-notes h2 {
+    color: #0b5d3b;
+    margin-bottom: 12px;
+}
+
+.download-notes p {
+    color: #536b5e;
+    margin-bottom: 25px;
+}
+
+.download-button {
+    padding: 14px 25px;
+    border: none;
+    border-radius: 12px;
+    background: #0b5d3b;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.download-button:hover {
+    background: #14845a;
+    transform: translateY(-2px);
+}
+
+body.dark-mode .download-notes {
+    background: linear-gradient(135deg, #193529, #10251c);
+    border-color: #285240;
+}
+
+body.dark-mode .download-notes h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .download-notes p {
+    color: #c7ddd1;
+}
+
+@media (max-width: 600px) {
+    .download-notes {
+        margin: 45px 15px;
+        padding: 25px 18px;
+    }
+}
+      .download-button {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧬 Genetics Research</h1>
+    <p>Exploring genes, DNA, heredity and genetic variation</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="genetics.html">Genetics</a>
+    <a href="microbiology.html">Microbiology</a>
+    <a href="ecology.html">Ecology</a>
+    <a href="cell-biology.html">Cell Biology</a>
+    <a href="articles.html">Articles</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+
+    <button onclick="toggleDarkMode()" class="dark-button">
+        🌙 Dark Mode
+    </button>
+</nav>
+
+<main class="content">
+
+    <section class="intro">
+        <h2>About Genetics</h2>
+        <p>
+            Genetics is the branch of biology that studies genes,
+            heredity and variation in living organisms. Research in
+            genetics helps scientists understand how characteristics
+            are passed from one generation to another.
+        </p>
+    </section>
+
+    <section class="topic-grid">
+
+        <div class="topic">
+            <h3>🧬 DNA</h3>
+            <p>
+                DNA contains genetic information that helps control
+                the development and functioning of living organisms.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h3>🔬 Genes</h3>
+            <p>
+                Genes are sections of DNA that contain information
+                used to produce functional biological products.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h3>👨‍👩‍👧 Heredity</h3>
+            <p>
+                Heredity describes how genetic information and traits
+                can be passed from parents to their offspring.
+            </p>
+        </div>
+
+        <div class="topic">
+            <h3>🧪 Mutations</h3>
+            <p>
+                Mutations are changes in genetic material. They can
+                contribute to genetic variation within populations.
+            </p>
+        </div>
+
+    </section>
+  <section class="study-notes">
+
+    <h2>🧬 Genetics: Detailed Study Notes</h2>
+
+    <div class="note-topic">
+        <h3>1. Meaning of Genetics</h3>
+
+        <p>
+            Genetics is the branch of biology that deals with heredity
+            and variation in living organisms.
+        </p>
+
+        <p>
+            It explains how characteristics are passed from parents to
+            offspring and why individuals of the same species may differ.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>2. Heredity</h3>
+
+        <p>
+            Heredity is the transmission of characteristics from parents
+            to their offspring through genetic information.
+        </p>
+
+        <p>
+            Examples of inherited characteristics include blood group,
+            certain genetic traits, and some aspects of physical appearance.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>3. Variation</h3>
+
+        <p>
+            Variation refers to differences in characteristics among
+            individuals of the same species.
+        </p>
+
+        <h4>Types of Variation</h4>
+
+        <ul>
+            <li>
+                <strong>Continuous variation:</strong>
+                Characteristics show a range of values, such as height.
+            </li>
+
+            <li>
+                <strong>Discontinuous variation:</strong>
+                Characteristics fall into distinct categories, such as
+                ABO blood groups.
+            </li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>4. Gene</h3>
+
+        <p>
+            A gene is a section of DNA that contains information involved
+            in determining a particular characteristic or producing a
+            functional product.
+        </p>
+
+        <p>
+            Genes are located on chromosomes.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>5. Chromosomes</h3>
+
+        <p>
+            Chromosomes are structures made mainly of DNA and proteins.
+            They are found in the nucleus of eukaryotic cells.
+        </p>
+
+        <p>
+            Chromosomes carry genes and help organize genetic information.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>6. DNA</h3>
+
+        <p>
+            DNA stands for <strong>deoxyribonucleic acid</strong>.
+            It is the main hereditary material in most organisms.
+        </p>
+
+        <p>
+            DNA stores genetic information and can be copied so that
+            genetic information can be passed to new cells.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>7. Alleles</h3>
+
+        <p>
+            Alleles are different forms of the same gene.
+        </p>
+
+        <p>
+            An individual normally inherits one allele of a gene from
+            each parent in a diploid organism.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>8. Dominant and Recessive Alleles</h3>
+
+        <p>
+            A dominant allele can contribute to the phenotype when present
+            in a heterozygous individual.
+        </p>
+
+        <p>
+            A recessive allele generally contributes to the phenotype when
+            two copies are present in a typical Mendelian inheritance
+            pattern.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>9. Genotype and Phenotype</h3>
+
+        <p>
+            <strong>Genotype</strong> refers to the genetic combination
+            carried by an organism.
+        </p>
+
+        <p>
+            <strong>Phenotype</strong> refers to the observable
+            characteristics of an organism resulting from its genotype
+            and environmental influences.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>10. Homozygous and Heterozygous</h3>
+
+        <ul>
+            <li>
+                <strong>Homozygous:</strong> Having two identical alleles
+                for a particular gene.
+            </li>
+
+            <li>
+                <strong>Heterozygous:</strong> Having two different alleles
+                for a particular gene.
+            </li>
+        </ul>
+
+        <p class="example">
+            Homozygous → AA or aa &nbsp;&nbsp; | &nbsp;&nbsp;
+            Heterozygous → Aa
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>11. Mendel and Genetics</h3>
+
+        <p>
+            Gregor Mendel carried out important experiments on pea plants
+            that helped establish principles of inheritance.
+        </p>
+
+        <p>
+            His work contributed to the development of classical genetics
+            and the understanding of how inherited characteristics are
+            transmitted.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>12. Mendel's Laws</h3>
+
+        <h4>Law of Segregation</h4>
+
+        <p>
+            The two alleles of a gene separate during the formation of
+            gametes, so each gamete receives one allele.
+        </p>
+
+        <h4>Independent Assortment</h4>
+
+        <p>
+            Alleles of different genes can assort independently during
+            gamete formation when the genes are not linked.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>13. Monohybrid Cross</h3>
+
+        <p>
+            A monohybrid cross follows the inheritance of one pair of
+            contrasting characteristics.
+        </p>
+
+        <p class="example">
+            Example: Aa × Aa
+        </p>
+
+        <p>
+            Possible offspring genotypes:
+            <strong>AA, Aa, Aa, aa</strong>
+        </p>
+
+        <p>
+            The genotype ratio is therefore:
+            <strong>1 : 2 : 1</strong>
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>14. Dihybrid Cross</h3>
+
+        <p>
+            A dihybrid cross follows the inheritance of two different
+            characteristics at the same time.
+        </p>
+
+        <p>
+            In a simple Mendelian case involving independently assorting
+            genes, the classic F₂ phenotypic ratio is:
+        </p>
+
+        <p class="example">
+            9 : 3 : 3 : 1
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>15. Sex Determination</h3>
+
+        <p>
+            In humans, sex is associated with the sex chromosomes.
+            Females typically have XX chromosomes while males typically
+            have XY chromosomes.
+        </p>
+
+        <p>
+            The egg normally carries an X chromosome, while sperm may
+            carry either X or Y.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>16. Mutation</h3>
+
+        <p>
+            A mutation is a change in the genetic material.
+        </p>
+
+        <p>
+            Mutations can arise spontaneously or as a result of certain
+            environmental factors. Their effects may be harmful,
+            beneficial, or have little noticeable effect.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>17. Genetic Disorders</h3>
+
+        <p>
+            Some disorders result from changes in genes or chromosomes.
+        </p>
+
+        <p><strong>Examples include:</strong></p>
+
+        <ul>
+            <li>Sickle cell disease</li>
+            <li>Haemophilia</li>
+            <li>Down syndrome</li>
+            <li>Cystic fibrosis</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>18. Genetic Engineering</h3>
+
+        <p>
+            Genetic engineering involves deliberately modifying genetic
+            material using biotechnology.
+        </p>
+
+        <p>
+            It has applications in medicine, agriculture, research,
+            and industrial biotechnology.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>19. Importance of Genetics</h3>
+
+        <ul>
+            <li>Understanding inheritance.</li>
+            <li>Studying genetic diseases.</li>
+            <li>Improving crops and livestock.</li>
+            <li>Understanding evolution and variation.</li>
+            <li>Supporting medical research.</li>
+            <li>Understanding biological diversity.</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>20. Quick Genetics Revision</h3>
+
+        <ul>
+            <li><strong>Genetics:</strong> Study of heredity and variation.</li>
+            <li><strong>Gene:</strong> A section of DNA involved in a hereditary characteristic or functional product.</li>
+            <li><strong>Allele:</strong> An alternative form of a gene.</li>
+            <li><strong>Chromosome:</strong> DNA-protein structure carrying genetic information.</li>
+            <li><strong>Genotype:</strong> Genetic constitution.</li>
+            <li><strong>Phenotype:</strong> Observable characteristics.</li>
+            <li><strong>Homozygous:</strong> Two identical alleles.</li>
+            <li><strong>Heterozygous:</strong> Two different alleles.</li>
+            <li><strong>Mutation:</strong> A change in genetic material.</li>
+            <li><strong>Heredity:</strong> Transmission of characteristics from parents to offspring.</li>
+        </ul>
+    </div>
+       <div class="note-topic">
+    <h3>21. Punnett Squares</h3>
+
+    <p>
+        A Punnett square is a diagram used to predict the possible
+        genetic combinations of offspring from a genetic cross.
+    </p>
+
+    <h4>Example: Aa × Aa</h4>
+
+    <p class="example">
+        Parents: Aa × Aa
+    </p>
+
+    <ul>
+        <li>Possible offspring: AA, Aa, Aa, aa</li>
+        <li>Genotype ratio: 1 : 2 : 1</li>
+        <li>Probability of AA: 25%</li>
+        <li>Probability of Aa: 50%</li>
+        <li>Probability of aa: 25%</li>
+    </ul>
+</div>
+
+<div class="note-topic">
+    <h3>22. Blood Group Genetics</h3>
+
+    <p>
+        The ABO blood group system is controlled by different alleles
+        of a gene. The main alleles are IA, IB and i.
+    </p>
+
+    <ul>
+        <li><strong>Blood group A:</strong> IAIA or IAi</li>
+        <li><strong>Blood group B:</strong> IBIB or IBi</li>
+        <li><strong>Blood group AB:</strong> IAIB</li>
+        <li><strong>Blood group O:</strong> ii</li>
+    </ul>
+
+    <p>
+        IA and IB are codominant, while i is recessive.
+    </p>
+</div>
+
+<div class="note-topic">
+    <h3>23. Sex-Linked Inheritance</h3>
+
+    <p>
+        Sex-linked characteristics are controlled by genes located on
+        the sex chromosomes, especially the X chromosome.
+    </p>
+
+    <p>
+        Examples of X-linked conditions include haemophilia and
+        red-green colour blindness.
+    </p>
+
+    <p>
+        Because males typically have one X chromosome, an X-linked
+        recessive allele can be expressed when it is present on their
+        single X chromosome.
+    </p>
+</div>
+
+<div class="note-topic">
+    <h3>24. DNA Replication</h3>
+
+    <p>
+        DNA replication is the process by which DNA makes a copy of
+        itself before cell division.
+    </p>
+
+    <h4>Main Steps</h4>
+
+    <ol>
+        <li>The DNA double helix unwinds.</li>
+        <li>The two DNA strands separate.</li>
+        <li>Complementary nucleotides pair with exposed bases.</li>
+        <li>New DNA strands are formed.</li>
+        <li>Two DNA molecules are produced.</li>
+    </ol>
+
+    <p class="example">
+        DNA replication is described as semi-conservative because
+        each new DNA molecule contains one original strand and one
+        newly formed strand.
+    </p>
+</div>
+
+<div class="note-topic">
+    <h3>25. Transcription</h3>
+
+    <p>
+        Transcription is the process of making an RNA copy of genetic
+        information from a DNA template.
+    </p>
+
+    <p>
+        The RNA produced can carry genetic information from DNA to
+        the ribosome for protein synthesis.
+    </p>
+</div>
+
+<div class="note-topic">
+    <h3>26. Translation</h3>
+
+    <p>
+        Translation is the process by which the information carried
+        by messenger RNA is used to assemble amino acids into a
+        protein.
+    </p>
+
+    <ol>
+        <li>mRNA attaches to a ribosome.</li>
+        <li>The ribosome reads the mRNA codons.</li>
+        <li>tRNA brings the appropriate amino acids.</li>
+        <li>Amino acids are joined together.</li>
+        <li>A polypeptide chain is formed.</li>
+    </ol>
+</div>
+
+<div class="note-topic">
+    <h3>27. Pedigree Charts</h3>
+
+    <p>
+        A pedigree chart is a diagram used to represent the inheritance
+        of a characteristic through several generations of a family.
+    </p>
+
+    <ul>
+        <li><strong>Square:</strong> Usually represents a male.</li>
+        <li><strong>Circle:</strong> Usually represents a female.</li>
+        <li><strong>Shaded symbol:</strong> Usually represents an affected individual.</li>
+        <li><strong>Horizontal line:</strong> Represents a parental relationship.</li>
+        <li><strong>Vertical line:</strong> Connects parents to offspring.</li>
+    </ul>
+</div>
+
+<div class="note-topic">
+    <h3>28. Types of Mutations</h3>
+
+    <p>
+        Mutations can occur at different levels of genetic material.
+    </p>
+
+    <ul>
+        <li><strong>Substitution:</strong> One nucleotide is replaced by another.</li>
+        <li><strong>Insertion:</strong> One or more nucleotides are added.</li>
+        <li><strong>Deletion:</strong> One or more nucleotides are removed.</li>
+    </ul>
+
+    <p>
+        Mutations may affect the structure or function of proteins,
+        although some mutations have little or no observable effect.
+    </p>
+</div>
+
+<div class="note-topic">
+    <h3>29. Genetic Engineering and Biotechnology</h3>
+
+    <p>
+        Genetic engineering involves deliberately changing genetic
+        material using biotechnology.
+    </p>
+
+    <h4>Applications</h4>
+
+    <ul>
+        <li>Production of some medicines.</li>
+        <li>Development of improved crops.</li>
+        <li>Scientific research.</li>
+        <li>Production of useful biological products.</li>
+        <li>Study and diagnosis of genetic conditions.</li>
+    </ul>
+</div>
+
+<div class="note-topic">
+    <h3>30. Genetics Practice Questions</h3>
+
+    <ol>
+        <li>What is genetics?</li>
+        <li>Define gene and allele.</li>
+        <li>Differentiate between genotype and phenotype.</li>
+        <li>What is a chromosome?</li>
+        <li>Explain the law of segregation.</li>
+        <li>What is a monohybrid cross?</li>
+        <li>State the genotype ratio of Aa × Aa.</li>
+        <li>What are the four main ABO blood groups?</li>
+        <li>What is DNA replication?</li>
+        <li>Differentiate between transcription and translation.</li>
+    </ol>
+</div>
+    <div class="punnett-section">
+
+    <h2>🧬 Interactive Punnett Square</h2>
+
+    <p class="punnett-intro">
+        Explore how two alleles can combine to produce different
+        possible offspring genotypes.
+    </p>
+
+    <div class="punnett-controls">
+
+        <div class="parent-control">
+            <label for="parent1">Parent 1</label>
+            <select id="parent1">
+                <option value="AA">AA</option>
+                <option value="Aa" selected>Aa</option>
+                <option value="aa">aa</option>
+            </select>
+        </div>
+
+        <div class="parent-control">
+            <label for="parent2">Parent 2</label>
+            <select id="parent2">
+                <option value="AA">AA</option>
+                <option value="Aa" selected>Aa</option>
+                <option value="aa">aa</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="punnett-table-wrapper">
+
+        <table class="punnett-table">
+
+            <tr>
+                <th>×</th>
+                <th id="top1">A</th>
+                <th id="top2">a</th>
+            </tr>
+
+            <tr>
+                <th id="side1">A</th>
+                <td id="box1">AA</td>
+                <td id="box2">Aa</td>
+            </tr>
+
+            <tr>
+                <th id="side2">a</th>
+                <td id="box3">Aa</td>
+                <td id="box4">aa</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="punnett-result">
+
+        <h3>📊 Results</h3>
+
+        <p id="genotypeResult">
+            Genotype ratio: 1 AA : 2 Aa : 1 aa
+        </p>
+
+        <p id="phenotypeResult">
+            Possible genotypes: AA, Aa and aa
+        </p>
+
+    </div>
+
+</div>
+    <div class="genetics-quiz">
+
+    <h2>🧬 Genetics Quiz</h2>
+
+    <p class="quiz-intro">
+        Test your understanding of genetics and see how well you score.
+    </p>
+
+    <div class="quiz-question">
+        <h3>1. What is the study of heredity and variation called?</h3>
+
+        <label>
+            <input type="radio" name="q1" value="a">
+            Ecology
+        </label>
+
+        <label>
+            <input type="radio" name="q1" value="b">
+            Genetics
+        </label>
+
+        <label>
+            <input type="radio" name="q1" value="c">
+            Microbiology
+        </label>
+    </div>
+
+    <div class="quiz-question">
+        <h3>2. What is an alternative form of a gene called?</h3>
+
+        <label>
+            <input type="radio" name="q2" value="a">
+            Chromosome
+        </label>
+
+        <label>
+            <input type="radio" name="q2" value="b">
+            Allele
+        </label>
+
+        <label>
+            <input type="radio" name="q2" value="c">
+            Nucleus
+        </label>
+    </div>
+
+    <div class="quiz-question">
+        <h3>3. What is the genotype ratio of Aa × Aa?</h3>
+
+        <label>
+            <input type="radio" name="q3" value="a">
+            3 : 1
+        </label>
+
+        <label>
+            <input type="radio" name="q3" value="b">
+            1 : 1
+        </label>
+
+        <label>
+            <input type="radio" name="q3" value="c">
+            1 : 2 : 1
+        </label>
+    </div>
+
+    <div class="quiz-question">
+        <h3>4. Which molecule stores genetic information?</h3>
+
+        <label>
+            <input type="radio" name="q4" value="a">
+            DNA
+        </label>
+
+        <label>
+            <input type="radio" name="q4" value="b">
+            Glucose
+        </label>
+
+        <label>
+            <input type="radio" name="q4" value="c">
+            Lipid
+        </label>
+    </div>
+
+    <div class="quiz-question">
+        <h3>5. What is a change in genetic material called?</h3>
+
+        <label>
+            <input type="radio" name="q5" value="a">
+            Mutation
+        </label>
+
+        <label>
+            <input type="radio" name="q5" value="b">
+            Respiration
+        </label>
+
+        <label>
+            <input type="radio" name="q5" value="c">
+            Diffusion
+        </label>
+    </div>
+
+    <button type="button" class="quiz-button" onclick="checkGeneticsQuiz()">
+        📝 Submit Quiz
+    </button>
+
+    <div id="quizResult" class="quiz-result"></div>
+
+</div>
+</section>
+  
+
+    <a class="back" href="index.html">← Back to Home</a>
+
+</main>
+
+<footer>
+    <p>© 2026 BioResearch Hub</p>
+</footer>
+  <script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (document.body.classList.contains("dark-mode")) {
+        button.innerHTML = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        button.innerHTML = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+}
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (button) {
+        button.innerHTML = "☀️ Light Mode";
+    }
+}
+</script>
+ <script>
+const parent1 = document.getElementById("parent1");
+const parent2 = document.getElementById("parent2");
+
+   /**
+ * @param {string} genotype
+ * @returns {string[]}
+ */
+function getAlleles(genotype) {
+    return genotype.split("");
+}
+
+function updatePunnettSquare() {
+
+    const p1 = getAlleles(parent1.value);
+    const p2 = getAlleles(parent2.value);
+
+    document.getElementById("top1").textContent = p2[0];
+    document.getElementById("top2").textContent = p2[1];
+
+    document.getElementById("side1").textContent = p1[0];
+    document.getElementById("side2").textContent = p1[1];
+
+    const combinations = [
+        p1[0] + p2[0],
+        p1[0] + p2[1],
+        p1[1] + p2[0],
+        p1[1] + p2[1]
+    ];
+
+    const boxes = ["box1", "box2", "box3", "box4"];
+
+    boxes.forEach(function(id, index) {
+        let genotype = combinations[index];
+
+        if (genotype === "aA") {
+            genotype = "Aa";
+        }
+
+        document.getElementById(id).textContent = genotype;
+    });
+
+    const counts = {};
+
+    combinations.forEach(function(genotype) {
+
+        if (genotype === "aA") {
+            genotype = "Aa";
+        }
+
+        counts[genotype] = (counts[genotype] || 0) + 1;
+    });
+
+    const genotypeText = Object.entries(counts)
+        .map(function(item) {
+            return item[1] + " " + item[0];
+        })
+        .join(" : ");
+
+    document.getElementById("genotypeResult").textContent =
+        "Genotype ratio: " + genotypeText;
+
+    document.getElementById("phenotypeResult").textContent =
+        "Possible genotypes: " + Object.keys(counts).join(", ");
+}
+
+parent1.addEventListener("change", updatePunnettSquare);
+parent2.addEventListener("change", updatePunnettSquare);
+
+updatePunnettSquare();
+</script>
+  <script>
+function checkGeneticsQuiz() {
+
+    const answers = {
+        q1: "b",
+        q2: "b",
+        q3: "c",
+        q4: "a",
+        q5: "a"
+    };
+
+    const correctAnswers = {
+        q1: "Genetics",
+        q2: "Allele",
+        q3: "1 : 2 : 1",
+        q4: "DNA",
+        q5: "Mutation"
+    };
+
+    let score = 0;
+    let feedback = "";
+
+    for (const question in answers) {
+
+        const selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+
+            feedback +=
+                "<p>✅ " + question.toUpperCase() +
+                " — Correct!</p>";
+
+        } else {
+
+            feedback +=
+                "<p>❌ " + question.toUpperCase() +
+                " — Correct answer: " +
+                correctAnswers[question] +
+                "</p>";
+        }
+    }
+
+    const result = document.getElementById("quizResult");
+
+    result.innerHTML =
+        "<h3>📊 Your Score: " + score + "/5</h3>" +
+        feedback;
+
+    result.style.display = "block";
+} 
+  </script>
+
+      
+</body>
+</html>

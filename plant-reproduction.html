@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Reproduction | BioResearch Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f9f6;
+            color: #26352d;
+            line-height: 1.7;
+            transition: 0.3s;
+        }
+
+        header {
+            background: linear-gradient(135deg, #063d27, #0b5d3b, #14845a);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 38px;
+        }
+
+        header p {
+            margin: 0;
+            color: #d9f3e6;
+        }
+
+        nav {
+            background: #062f20;
+            padding: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a,
+        .dark-button {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        nav a:hover,
+        .dark-button:hover {
+            color: #8ee8bd;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            margin-bottom: 30px;
+        }
+
+        .intro h2,
+        .topic h2 {
+            color: #0b5d3b;
+        }
+
+        .topic {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 18px;
+            border: 1px solid #dfe7e2;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        }
+
+        .topic h2 {
+            margin-top: 0;
+            font-size: 27px;
+        }
+
+        .topic h3 {
+            color: #14845a;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        .highlight {
+            background: #eaf7f0;
+            border-left: 5px solid #14845a;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .comparison {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .comparison th,
+        .comparison td {
+            border: 1px solid #cfded5;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison th {
+            background: #0b5d3b;
+            color: white;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 22px;
+            background: #0b5d3b;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #14845a;
+        }
+
+        footer {
+            background: #062f20;
+            color: #d9f3e6;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        body.dark-mode {
+            background: #10251c;
+            color: #dcebe3;
+        }
+
+        body.dark-mode .intro,
+        body.dark-mode .topic {
+            background: #193529;
+            border-color: #285240;
+        }
+
+        body.dark-mode .intro h2,
+        body.dark-mode .topic h2 {
+            color: #8ee8bd;
+        }
+
+        body.dark-mode .topic h3 {
+            color: #8ee8bd;
+        }
+
+        body.dark-mode .highlight {
+            background: #214636;
+        }
+
+        body.dark-mode .comparison th {
+            background: #0b5d3b;
+        }
+
+        body.dark-mode .comparison td {
+            border-color: #3b5c4c;
+        }
+
+        body.dark-mode .comparison {
+            color: #dcebe3;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .topic,
+            .intro {
+                padding: 22px;
+            }
+
+            .comparison {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌱 Plant Reproduction</h1>
+    <p>Complete Biology Study Notes</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="resources.html">Resources</a>
+    <a href="articles.html">Articles</a>
+    <a href="genetics.html">Genetics</a>
+    <a href="ecology.html">Ecology</a>
+    <a href="cell-biology.html">Cell Biology</a>
+    <a href="enzymes.html">Enzymes</a>
+    <a href="wind.html">Wind</a>
+    <a href="dna-rna.html">DNA & RNA</a>
+
+    <button onclick="toggleDarkMode()" class="dark-button">
+        🌙 Dark Mode
+    </button>
+</nav>
+
+<main class="container">
+
+    <section class="intro">
+        <h2>What is Plant Reproduction?</h2>
+
+        <p>
+            Plant reproduction is the biological process by which plants
+            produce new individuals of their own kind. Reproduction ensures
+            the continuity and survival of plant species.
+        </p>
+
+        <div class="highlight">
+            <strong>Key idea:</strong>
+            Plants reproduce mainly through sexual reproduction and
+            asexual reproduction.
+        </div>
+    </section>
+
+
+    <section class="topic">
+        <h2>🌿 Types of Plant Reproduction</h2>
+
+        <h3>1. Sexual Reproduction</h3>
+
+        <p>
+            Sexual reproduction involves the fusion of male and female
+            gametes to form a zygote.
+        </p>
+
+        <p>
+            In flowering plants, the male gametes are found in pollen grains,
+            while the female gamete is contained within the ovule.
+        </p>
+
+        <h3>2. Asexual Reproduction</h3>
+
+        <p>
+            Asexual reproduction produces new plants from a single parent
+            without the fusion of gametes.
+        </p>
+
+        <p>
+            The offspring are usually genetically very similar to the parent.
+        </p>
+    </section>
+
+
+    <section class="topic">
+        <h2>🌸 Reproduction in Flowering Plants</h2>
+
+        <p>
+            The flower is the reproductive structure of most flowering plants.
+            It contains structures involved in the production of male and
+            female gametes.
+        </p>
+
+        <h3>Parts of a Flower</h3>
+
+        <ul>
+            <li><strong>Sepals:</strong> Protect the developing flower bud.</li>
+            <li><strong>Petals:</strong> Attract pollinators.</li>
+            <li><strong>Stamen:</strong> Male reproductive structure.</li>
+            <li><strong>Carpel/Pistil:</strong> Female reproductive structure.</li>
+        </ul>
+    </section>
+
+
+    <section class="topic">
+        <h2>🌼 The Male Reproductive Part</h2>
+
+        <p>
+            The male reproductive structure of a flower is called the
+            <strong>stamen</strong>.
+        </p>
+
+        <h3>The stamen consists of:</h3>
+
+        <ul>
+            <li><strong>Anther</strong> – produces pollen grains.</li>
+            <li><strong>Filament</strong> – supports the anther.</li>
+        </ul>
+
+        <p>
+            Pollen grains contain the male gametes involved in fertilization.
+        </p>
+    </section>
+
+
+    <section class="topic">
+        <h2>🌺 The Female Reproductive Part</h2>
+
+        <p>
+            The female reproductive structure is called the
+            <strong>carpel</strong> or <strong>pistil</strong>.
+        </p>
+
+        <h3>It consists of:</h3>
+
+        <ul>
+            <li><strong>Stigma</strong> – receives pollen grains.</li>
+            <li><strong>Style</strong> – connects the stigma to the ovary.</li>
+            <li><strong>Ovary</strong> – contains ovules.</li>
+            <li><strong>Ovule</strong> – contains the female gamete.</li>
+        </ul>
+    </section>
+
+
+    <section class="topic">
+        <h2>🐝 Pollination</h2>
+
+        <p>
+            Pollination is the transfer of pollen grains from the anther
+            to the stigma of a flower.
+        </p>
+
+        <h3>Types of Pollination</h3>
+
+        <h3>Self-Pollination</h3>
+
+        <p>
+            This occurs when pollen is transferred to the stigma of the same
+            flower or another flower on the same plant.
+        </p>
+
+        <h3>Cross-Pollination</h3>
+
+        <p>
+            This occurs when pollen is transferred from a flower on one plant
+            to the stigma of a flower on another plant of the same species.
+        </p>
+    </section>
+
+
+    <section class="topic">
+        <h2>🦋 Agents of Pollination</h2>
+
+        <p>Pollination may be carried out by:</p>
+
+        <ul>
+            <li>Wind</li>
+            <li>Insects</li>
+            <li>Birds</li>
+            <li>Bats</li>
+            <li>Water</li>
+            <li>Other animals</li>
+        </ul>
+    </section>
+
+
+    <section class="topic">
+        <h2>🌱 Fertilization</h2>
+
+        <p>
+            Fertilization is the fusion of the male and female gametes
+            to form a diploid zygote.
+        </p>
+
+        <div class="highlight">
+            <strong>Remember:</strong>
+            Pollination happens before fertilization in flowering plants.
+        </div>
+
+        <p>
+            After fertilization, the zygote develops into an embryo.
+            The ovule develops into a seed, while the ovary usually develops
+            into a fruit.
+        </p>
+    </section>
+
+
+    <section class="topic">
+        <h2>🍎 Changes After Fertilization</h2>
+
+        <ul>
+            <li>Ovary → Fruit</li>
+            <li>Ovule → Seed</li>
+            <li>Zygote → Embryo</li>
+            <li>Ovary wall → Fruit wall</li>
+            <li>Fertilized egg → New plant embryo</li>
+        </ul>
+    </section>
+
+
+    <section class="topic">
+        <h2>🌿 Asexual Reproduction in Plants</h2>
+
+        <p>
+            Asexual reproduction occurs without the fusion of male and female
+            gametes.
+        </p>
+
+        <h3>Common Methods</h3>
+
+        <ul>
+            <li><strong>Runners</strong> – e.g. strawberry.</li>
+            <li><strong>Bulbs</strong> – e.g. onion.</li>
+            <li><strong>Tubers</strong> – e.g. potato.</li>
+            <li><strong>Rhizomes</strong> – e.g. ginger.</li>
+            <li><strong>Cuttings</strong> – used to produce new plants.</li>
+            <li><strong>Offsets</strong> – common in some aquatic plants.</li>
+        </ul>
+    </section>
+
+
+    <section class="topic">
+        <h2>🌱 Advantages of Asexual Reproduction</h2>
+
+        <ul>
+            <li>It is usually faster than sexual reproduction.</li>
+            <li>Only one parent is required.</li>
+            <li>Large numbers of plants can be produced quickly.</li>
+            <li>Desirable characteristics can be maintained.</li>
+        </ul>
+
+        <h3>Disadvantage</h3>
+
+        <p>
+            Because there is little or no genetic variation, a disease or
+            environmental change that affects one plant may affect many
+            genetically similar plants.
+        </p>
+    </section>
+
+
+    <section class="topic">
+        <h2>📊 Sexual vs Asexual Reproduction</h2>
+
+        <table class="comparison">
+            <tr>
+                <th>Sexual Reproduction</th>
+                <th>Asexual Reproduction</th>
+            </tr>
+
+            <tr>
+                <td>Usually involves two gametes.</td>
+                <td>Does not involve fusion of gametes.</td>
+            </tr>
+
+            <tr>
+                <td>Produces genetic variation.</td>
+                <td>Produces little genetic variation.</td>
+            </tr>
+
+            <tr>
+                <td>Usually slower.</td>
+                <td>Usually faster.</td>
+            </tr>
+
+            <tr>
+                <td>Seeds are commonly produced.</td>
+                <td>Vegetative structures may produce new plants.</td>
+            </tr>
+        </table>
+    </section>
+
+
+    <section class="topic">
+        <h2>📝 Quick Revision</h2>
+
+        <ul>
+            <li>Plant reproduction produces new plants.</li>
+            <li>Plants reproduce sexually and asexually.</li>
+            <li>The stamen is the male reproductive structure.</li>
+            <li>The carpel is the female reproductive structure.</li>
+            <li>Pollination is the transfer of pollen to the stigma.</li>
+            <li>Self-pollination occurs on the same plant.</li>
+            <li>Cross-pollination occurs between different plants of the same species.</li>
+            <li>Fertilization produces a zygote.</li>
+            <li>The ovule develops into a seed.</li>
+            <li>The ovary usually develops into a fruit.</li>
+            <li>Vegetative propagation is a form of asexual reproduction.</li>
+        </ul>
+    </section>
+
+    <a href="resources.html" class="button">← Back to Resources</a>
+
+</main>
+
+<footer>
+    <p>© 2026 BioResearch Hub | Biology Learning & Research</p>
+</footer>
+
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+        }
+    }
+
+    if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+    }
+</script>
+
+</body>
+</html>

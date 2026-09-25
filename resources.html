@@ -1,0 +1,778 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resources | BioResearch Hub</title>
+
+   <style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f9f6;
+    color: #173b2a;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #063d27, #0b5d3b, #14845a);
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+/* NAVIGATION */
+nav {
+    background: #062f20;
+    padding: 16px 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #8ee8bd;
+}
+
+/* MAIN CONTAINER */
+.container {
+    max-width: 1050px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+/* HEADINGS */
+h2 {
+    color: #0b5d3b;
+}
+
+h3 {
+    color: #0b5d3b;
+}
+
+/* CARDS */
+.card,
+.article-card,
+.resource-card,
+.contact-box,
+.article,
+.topic-card {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    border: 1px solid #e3eee8;
+    transition: 0.3s;
+}
+
+.card:hover,
+.article-card:hover,
+.resource-card:hover,
+.topic-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* BUTTONS */
+.button,
+.read,
+.back {
+    display: inline-block;
+    background: linear-gradient(135deg, #0b5d3b, #14845a);
+    color: white;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none;
+}
+
+.button:hover,
+.read:hover,
+.back:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(11,93,59,0.25);
+}
+
+/* FORM */
+input,
+textarea {
+    border: 1px solid #c8d8cf;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #8ee8bd;
+}
+     /* NOTES SECTION */
+.notes-section {
+    margin: 50px 0;
+}
+
+.notes-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.notes-heading h2 {
+    color: #0b5d3b;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.notes-heading p {
+    color: #536b5e;
+    line-height: 1.7;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(230px, 1fr)
+    );
+    gap: 25px;
+}
+
+.note-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid #e3eee8;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: 0.3s ease;
+}
+
+.note-card:hover,
+.note-card:active {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.note-card span {
+    display: block;
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.note-card h3 {
+    color: #0b5d3b;
+    margin-bottom: 12px;
+}
+
+.note-card p {
+    color: #536b5e;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* BUTTON */
+.button {
+    display: inline-block;
+    background: #0b5d3b;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover,
+.button:active {
+    background: #14845a;
+    transform: translateY(-2px);
+}
+
+/* RESOURCE CARDS */
+.resources {
+    margin-top: 40px;
+}
+
+.resource-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    border: 1px solid #e3eee8;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: 0.3s ease;
+}
+
+.resource-card:hover,
+.resource-card:active {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.resource-card .icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.resource-card h3 {
+    color: #0b5d3b;
+    margin-bottom: 10px;
+}
+
+.resource-card p {
+    color: #536b5e;
+    line-height: 1.7;
+}
+
+/* BACK LINK */
+.back {
+    display: inline-block;
+    margin-top: 30px;
+    color: #0b5d3b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+/* DARK MODE FOR NOTES */
+body.dark-mode .note-card {
+    background: #193529;
+    color: #e8f5ee;
+    border-color: #285240;
+}
+
+body.dark-mode .note-card h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .note-card p,
+body.dark-mode .notes-heading p {
+    color: #c7ddd1;
+}
+
+body.dark-mode .resource-card {
+    background: #193529;
+    color: #e8f5ee;
+    border-color: #285240;
+}
+
+body.dark-mode .resource-card h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .resource-card p {
+    color: #c7ddd1;
+}
+
+body.dark-mode .back {
+    color: #8ee8bd;
+}
+     .dark-button {
+    background: transparent;
+    color: white;
+    border: 1px solid #8ee8bd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: 0.3s;
+}
+
+.dark-button:hover {
+    background: #8ee8bd;
+    color: #062f20;
+}
+
+body.dark-mode {
+    background: #10251c;
+    color: #e8f5ee;
+}
+
+body.dark-mode .intro,
+body.dark-mode .card,
+body.dark-mode .article-card,
+body.dark-mode .resource-card,
+body.dark-mode .contact-box,
+body.dark-mode .article,
+body.dark-mode .topic-card {
+    background: #193529;
+    color: #e8f5ee;
+    border-color: #285240;
+}
+
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode nav,
+body.dark-mode footer {
+    background: #021c12;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 70px;
+    background: #062f20;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.7s ease;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    header {
+        padding: 45px 15px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    
+  }
+     .featured-learning {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 45px 25px;
+    text-align: center;
+}
+
+.featured-learning h2 {
+    color: #0b5d3b;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.featured-intro {
+    color: #5b7165;
+    max-width: 700px;
+    margin: 0 auto 35px;
+    line-height: 1.7;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(230px, 1fr)
+    );
+    gap: 25px;
+}
+
+.featured-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #dcebe3;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: 0.3s ease;
+}
+
+.featured-card:hover,
+.featured-card:active {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.featured-card span {
+    font-size: 35px;
+}
+
+.featured-card h3 {
+    color: #14845a;
+    margin: 15px 0 10px;
+}
+
+.featured-card p {
+    line-height: 1.7;
+    color: #4b6658;
+}
+
+.featured-card .button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #0b5d3b;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.featured-card .button:hover,
+.featured-card .button:active {
+    background: #14845a;
+    transform: translateY(-2px);
+}
+
+body.dark-mode .featured-learning h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .featured-intro,
+body.dark-mode .featured-card p {
+    color: #c7ddd1;
+}
+
+body.dark-mode .featured-card {
+    background: #193529;
+    color: #e8f5ee;
+    border-color: #285240;
+}
+
+body.dark-mode .featured-card h3 {
+    color: #8ee8bd;
+}
+
+@media (max-width: 600px) {
+    .featured-learning {
+        padding: 35px 15px;
+    }
+
+    .featured-learning h2 {
+        font-size: 28px;
+    }
+
+    .featured-card {
+        padding: 22px;
+    }
+}
+  
+</style> 
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Biology Resources</h1>
+    <p>Useful learning materials for biological research</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="genetics.html">Genetics</a>
+    <a href="microbiology.html">Microbiology</a>
+    <a href="ecology.html">Ecology</a>
+    <a href="cell-biology.html">Cell Biology</a>
+    <a href="articles.html">Articles</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+
+    <button onclick="toggleDarkMode()" class="dark-button">
+        🌙 Dark Mode
+    </button>
+</nav>
+
+<main class="container">
+
+    <section class="intro">
+        <h2>Research & Learning Resources 🔬</h2>
+        <p>
+            Explore useful areas for learning about biology,
+            research methods, and scientific discovery.
+        </p>
+    </section>
+
+    <section class="resources">
+      <section class="notes-section">
+
+    <div class="notes-heading">
+        <h2>📚 Biology Notes</h2>
+        <p>
+            Read and study clear biology notes covering important topics
+            in biological science.
+        </p>
+    </div>
+
+    <div class="notes-grid">
+      <div class="note-card">
+    <span>🧪</span>
+    <h3>Enzymes Notes</h3>
+    <p>
+        Learn about enzymes, their properties, factors affecting
+        enzyme activity, and their importance in living organisms.
+    </p>
+    <a href="enzymes.html" class="button">Read Notes →</a>
+</div>
+     <div class="note-card">
+    <span>💨</span>
+    <h3>Wind Notes</h3>
+    <p>
+        Learn about wind, how it is formed, air movement,
+        wind patterns, and its importance in the environment.
+    </p>
+    <a href="wind.html" class="button">Read Notes →</a>
+</div>  
+      <div class="note-card">
+    <span>🧬</span>
+
+    <h3>DNA & RNA Notes</h3>
+
+    <p>
+        Learn about DNA and RNA structure, replication,
+        transcription, translation, genetic codes, and mutations.
+    </p>
+
+    <a href="./dna-rna.html" class="button">Read Notes →</a>
+</div>
+
+        <div class="note-card">
+            <span>🧬</span>
+            <h3>Genetics Notes</h3>
+            <p>
+                Learn about DNA, genes, chromosomes, heredity,
+                mutations, and genetic variation.
+            </p>
+            <a href="genetics-notes.html" class="button">Read Notes →</a>
+        </div>
+      <div class="note-card">
+    <span>🌱</span>
+    <h3>Plant Reproduction Notes</h3>
+    <p>
+        Learn about sexual and asexual reproduction in plants,
+        flowers, pollination, fertilization, seeds, fruits,
+        and vegetative propagation.
+    </p>
+    <a href="./plant-reproduction.html" class="button">Read Notes →</a>
+</div>
+      <div class="note-card">
+    <span>🧬</span>
+    <h3>Human Reproduction Notes</h3>
+    <p>
+        Study the male and female reproductive systems,
+        gametes, puberty, menstrual cycle, fertilization,
+        implantation, pregnancy, and reproductive hormones.
+    </p>
+    <a href="./human-reproduction.html" class="button">Read Notes →</a>
+</div>
+
+        <div class="note-card">
+            <span>🦠</span>
+            <h3>Microbiology Notes</h3>
+            <p>
+                Explore microorganisms, bacteria, viruses,
+                fungi, and their importance.
+            </p>
+           <a href="microbiology-notes.html" class="button">Read Notes →</a> 
+        </div>
+
+        <div class="note-card">
+            <span>🌱</span>
+            <h3>Ecology Notes</h3>
+            <p>
+                Study ecosystems, food chains, biodiversity,
+                populations, and environmental relationships.
+            </p>
+            <a href="ecology-notes.html" class="button">Read Notes →</a>
+        </div>
+
+        <div class="note-card">
+            <span>🔬</span>
+            <h3>Cell Biology Notes</h3>
+            <p>
+                Learn about cells, organelles, cell division,
+                transport, and cellular processes.
+            </p>
+            <a href="cell-biology-notes.html" class="button">Read Notes →</a>
+        </div>
+
+    </div>
+
+</section>
+      <section class="featured-learning">
+
+    <h2>🌟 Featured Learning</h2>
+
+    <p class="featured-intro">
+        Explore useful biology learning areas to improve your
+        knowledge and understanding.
+    </p>
+
+    <div class="featured-grid">
+
+        <div class="featured-card">
+            <span>📝</span>
+            <h3>Study Notes</h3>
+            <p>
+                Review clear biology notes covering important
+                topics and concepts.
+            </p>
+            <a href="#biology-notes" class="button">
+                Explore Notes →
+            </a>
+        </div>
+
+        <div class="featured-card">
+            <span>🔬</span>
+            <h3>Research Projects</h3>
+            <p>
+                Explore biology research topics and educational
+                projects from BioResearch Hub.
+            </p>
+            <a href="articles.html" class="button">
+                View Research →
+            </a>
+        </div>
+
+        <div class="featured-card">
+            <span>🧠</span>
+            <h3>Biology Topics</h3>
+            <p>
+                Learn about genetics, microbiology, ecology,
+                and cell biology.
+            </p>
+            <a href="index.html#research" class="button">
+                Explore Topics →
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+        <div class="resource-card">
+            <div class="icon">📖</div>
+            <h3>Biology Notes</h3>
+            <p>
+                Review important concepts from genetics,
+                microbiology, ecology, and cell biology.
+            </p>
+        </div>
+
+        <div class="resource-card">
+            <div class="icon">🧪</div>
+            <h3>Research Methods</h3>
+            <p>
+                Learn about observation, data collection,
+                analysis, and scientific investigation.
+            </p>
+        </div>
+
+        <div class="resource-card">
+            <div class="icon">🔬</div>
+            <h3>Laboratory Science</h3>
+            <p>
+                Explore the role of laboratory techniques
+                in biological research.
+            </p>
+        </div>
+
+        <div class="resource-card">
+            <div class="icon">📊</div>
+            <h3>Data & Analysis</h3>
+            <p>
+                Learn how biological researchers organize,
+                interpret, and communicate scientific data.
+            </p>
+        </div>
+
+        <div class="resource-card">
+            <div class="icon">🌍</div>
+            <h3>Ecology Resources</h3>
+            <p>
+                Study ecosystems, biodiversity,
+                conservation, and environmental biology.
+            </p>
+        </div>
+
+        <div class="resource-card">
+            <div class="icon">🧬</div>
+            <h3>Genetics Resources</h3>
+            <p>
+                Explore DNA, genes, heredity, mutations,
+                and genetic variation.
+            </p>
+        </div>
+
+    </section>
+
+    <a class="back" href="index.html">← Back to Home</a>
+
+</main>
+
+<footer>
+    <p>© 2026 BioResearch Hub | Biological Research & Education</p>
+</footer>
+  <script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (document.body.classList.contains("dark-mode")) {
+        button.innerHTML = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        button.innerHTML = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+}
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (button) {
+        button.innerHTML = "☀️ Light Mode";
+    }
+}
+</script>
+
+</body>
+</html>

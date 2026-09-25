@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Microbiology Notes | BioResearch Hub</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f9f6;
+            color: #173b2a;
+        }
+
+        header {
+            background: #062f20;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 34px;
+        }
+
+        header p {
+            color: #c7ddd1;
+        }
+
+        nav {
+            background: #062f20;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 8px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #8ee8bd;
+        }
+
+        .dark-button {
+            background: transparent;
+            color: white;
+            border: 1px solid #8ee8bd;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .intro h2 {
+            color: #0b5d3b;
+        }
+
+        .note-card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 18px;
+            border: 1px solid #dcebe3;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: 0.3s ease;
+        }
+
+        .note-card:hover,
+        .note-card:active {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .note-card h2 {
+            color: #0b5d3b;
+        }
+
+        .note-card h3 {
+            color: #14845a;
+        }
+
+        .note-card p,
+        .note-card li {
+            line-height: 1.7;
+        }
+
+        .back {
+            display: inline-block;
+            margin: 10px 0 40px;
+            color: #0b5d3b;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #062f20;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        body.dark-mode {
+            background: #10251c;
+            color: #e8f5ee;
+        }
+
+        body.dark-mode nav,
+        body.dark-mode footer {
+            background: #021c12;
+        }
+
+        body.dark-mode .intro,
+        body.dark-mode .note-card {
+            background: #193529;
+            color: #e8f5ee;
+            border-color: #285240;
+        }
+
+        body.dark-mode .intro h2,
+        body.dark-mode .note-card h2,
+        body.dark-mode .note-card h3 {
+            color: #8ee8bd;
+        }
+
+        body.dark-mode .back {
+            color: #8ee8bd;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .note-card,
+            .intro {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🦠 Microbiology Notes</h1>
+    <p>Explore the fascinating world of microorganisms</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="genetics.html">Genetics</a>
+    <a href="microbiology.html">Microbiology</a>
+    <a href="ecology.html">Ecology</a>
+    <a href="cell-biology.html">Cell Biology</a>
+    <a href="articles.html">Articles</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+
+    <button onclick="toggleDarkMode()" class="dark-button">
+        🌙 Dark Mode
+    </button>
+</nav>
+
+<main class="container">
+
+    <section class="intro">
+        <h2>Microbiology Study Notes 🔬</h2>
+        <p>
+            Learn about microorganisms, their structures,
+            activities, importance, and effects on living organisms.
+        </p>
+    </section>
+
+    <section class="note-card">
+        <h2>1. Introduction to Microbiology</h2>
+
+        <p>
+            Microbiology is the branch of biology concerned with the
+            study of microorganisms. These organisms are generally too
+            small to be seen clearly with the unaided eye.
+        </p>
+
+        <p>
+            Microbiology involves the study of microorganisms such as
+            bacteria, viruses, fungi, protozoa, and microscopic algae.
+        </p>
+    </section>
+
+    <section class="note-card">
+        <h2>2. Types of Microorganisms</h2>
+
+        <ul>
+            <li>Bacteria</li>
+            <li>Viruses</li>
+            <li>Fungi</li>
+            <li>Protozoa</li>
+            <li>Microscopic algae</li>
+        </ul>
+
+        <p>
+            Microorganisms may be useful, harmless, or harmful depending
+            on the organism and the environment in which it occurs.
+        </p>
+    </section>
+
+    <section class="note-card">
+        <h2>3. Bacteria</h2>
+
+        <p>
+            Bacteria are microscopic single-celled organisms.
+            They are prokaryotic because their genetic material is not
+            enclosed within a membrane-bound nucleus.
+        </p>
+
+        <h3>Common bacterial shapes</h3>
+
+        <ul>
+            <li><strong>Coccus</strong> — spherical or round-shaped.</li>
+            <li><strong>Bacillus</strong> — rod-shaped.</li>
+            <li><strong>Spirillum</strong> — spiral-shaped.</li>
+            <li><strong>Vibrio</strong> — comma-shaped.</li>
+        </ul>
+    </section>
+
+    <section class="note-card">
+        <h2>4. Viruses</h2>
+
+        <p>
+            Viruses are extremely small infectious agents that contain
+            genetic material surrounded by a protein coat.
+        </p>
+
+        <p>
+            Viruses cannot reproduce independently. They require a
+            suitable living host cell to make new virus particles.
+        </p>
+    </section>
+
+    <section class="note-card">
+        <h2>5. Fungi</h2>
+
+        <p>
+            Fungi are eukaryotic organisms. They include organisms such
+            as yeasts and moulds.
+        </p>
+
+        <p>
+            Many fungi obtain nutrients by secreting enzymes onto
+            organic material and absorbing the resulting soluble
+            substances.
+        </p>
+    </section>
+
+    <section class="note-card">
+        <h2>6. Protozoa</h2>
+
+        <p>
+            Protozoa are mostly microscopic, single-celled eukaryotic
+            organisms. Many live in water or moist environments.
+        </p>
+
+        <p>
+            Some protozoa are free-living, while others live as
+            parasites in other organisms.
+        </p>
+    </section>
+
+    <section class="note-card">
+        <h2>7. Useful Microorganisms</h2>
+
+        <ul>
+            <li>Used in food production.</li>
+            <li>Help in decomposition of organic matter.</li>
+            <li>Used in the production of some medicines.</li>
+            <li>Help recycle nutrients in ecosystems.</li>
+            <li>Used in biotechnology and scientific research.</li>
+        </ul>
+    </section>
+
+    <section class="note-card">
+        <h2>8. Harmful Microorganisms</h2>
+
+        <p>
+            Some microorganisms can cause diseases in humans, animals,
+            and plants. Others can spoil food or damage materials.
+        </p>
+
+        <p>
+            Disease-causing microorganisms are called
+            <strong>pathogens</strong>.
+        </p>
+    </section>
+
+    <section class="note-card">
+        <h2>9. Microbial Nutrition</h2>
+
+        <p>
+            Microorganisms obtain nutrients in different ways.
+            Some produce their own food, while others obtain organic
+            substances from their surroundings.
+        </p>
+
+        <ul>
+            <li>Autotrophic nutrition</li>
+            <li>Heterotrophic nutrition</li>
+            <li>Saprophytic nutrition</li>
+            <li>Parasitic nutrition</li>
+        </ul>
+    </section>
+
+    <section class="note-card">
+        <h2>10. Microbial Reproduction</h2>
+
+        <p>
+            Many bacteria reproduce through binary fission. In this
+            process, one bacterial cell divides to form two daughter
+            cells.
+        </p>
+
+        <p>
+            Some fungi reproduce using spores, while microorganisms
+            have other reproductive processes depending on their group.
+        </p>
+    </section>
+
+    <a href="resources.html" class="back">
+        ← Back to Resources
+    </a>
+
+</main>
+
+<footer>
+    <p>© 2026 BioResearch Hub | Biological Research & Education</p>
+</footer>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (document.body.classList.contains("dark-mode")) {
+        button.innerHTML = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        button.innerHTML = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+}
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (button) {
+        button.innerHTML = "☀️ Light Mode";
+    }
+}
+</script>
+
+</body>
+</html>

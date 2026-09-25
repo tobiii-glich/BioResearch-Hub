@@ -1,0 +1,2447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioResearch Hub</title>
+
+    <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f9f6;
+        color: #173b2a;
+        line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+        background: linear-gradient(135deg, #063d27, #0b5d3b, #14845a);
+        color: white;
+        text-align: center;
+        padding: 70px 20px;
+    }
+
+    header h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    header p {
+        font-size: 18px;
+        opacity: 0.9;
+    }
+
+    /* NAVIGATION */
+    nav {
+        background: #062f20;
+        padding: 16px 10px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #8ee8bd;
+    }
+
+    /* HERO */
+    .hero {
+        max-width: 1000px;
+        margin: 45px auto;
+        padding: 70px 30px;
+        text-align: center;
+        border-radius: 25px;
+        background: linear-gradient(
+            135deg,
+            #e2f5ea,
+            #ffffff
+        );
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        animation: fadeIn 1s ease;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+        color: #0b5d3b;
+        margin-bottom: 18px;
+    }
+
+    .hero p {
+        max-width: 700px;
+        margin: 0 auto 28px;
+        font-size: 18px;
+        color: #456457;
+    }
+
+    /* BUTTONS */
+    .button {
+        display: inline-block;
+        background: linear-gradient(135deg, #0b5d3b, #14845a);
+        color: white;
+        text-decoration: none;
+        padding: 13px 24px;
+        border-radius: 30px;
+        font-weight: bold;
+        border: none;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(11,93,59,0.25);
+    }
+
+    .button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(11,93,59,0.3);
+    }
+
+    /* SECTION */
+    .research,
+    .projects {
+        max-width: 1100px;
+        margin: 70px auto;
+        padding: 0 20px;
+    }
+
+    .research h2,
+    .projects h2 {
+        text-align: center;
+        color: #0b5d3b;
+        font-size: 30px;
+        margin-bottom: 35px;
+    }
+
+    /* MODERN CARDS */
+
+.cards,
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(240px, 1fr)
+    );
+    gap: 28px;
+}
+
+.card,
+.project-card {
+    background: white;
+    padding: 28px;
+    border-radius: 22px;
+    border: 1px solid #dcebe3;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before,
+.project-card::before {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 55px;
+    background: #14845a;
+    border-radius: 10px;
+    margin-bottom: 22px;
+}
+
+.card:hover,
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+    border-color: #b9dccb;
+}
+
+.card:active,
+.project-card:active {
+    transform: translateY(-3px) scale(0.98);
+}
+
+.card h3,
+.project-card h3 {
+    color: #0b5d3b;
+    margin: 0 0 12px;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.card p,
+.project-card p {
+    color: #536b5e;
+    margin-bottom: 22px;
+    line-height: 1.7;
+}
+
+.project-card {
+    text-align: center;
+}
+
+.project-card span {
+    display: block;
+    font-size: 52px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover span {
+    transform: scale(1.12);
+}
+
+.project-card a {
+    display: inline-block;
+    color: #0b5d3b;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.project-card a:hover {
+    color: #14845a;
+}
+
+/* DARK MODE CARDS */
+
+body.dark-mode .card,
+body.dark-mode .project-card {
+    background: #193529;
+    color: #e8f5ee;
+    border-color: #285240;
+}
+
+body.dark-mode .card h3,
+body.dark-mode .project-card h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .card p,
+body.dark-mode .project-card p {
+    color: #c7ddd1;
+}
+
+body.dark-mode .project-card a {
+    color: #8ee8bd;
+}
+
+body.dark-mode .project-card::before,
+body.dark-mode .card::before {
+    background: #8ee8bd;
+}
+
+/* MOBILE CARDS */
+
+@media (max-width: 600px) {
+
+    .cards,
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card,
+    .project-card {
+        padding: 25px;
+        border-radius: 20px;
+    }
+
+    .project-card span {
+        font-size: 48px;
+    }
+} 
+
+    /* STATS */
+    .stats {
+        max-width: 1000px;
+        margin: 70px auto;
+        padding: 40px 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        text-align: center;
+    }
+
+    .stat {
+        background: #0b5d3b;
+        color: white;
+        padding: 30px 15px;
+        border-radius: 18px;
+    }
+
+    .stat h3 {
+        font-size: 32px;
+        margin-bottom: 5px;
+    }
+
+    .stat p {
+        opacity: 0.9;
+    }
+
+    /* FOOTER */
+    footer {
+        margin-top: 70px;
+        background: #062f20;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+
+        header h1 {
+            font-size: 32px;
+        }
+
+        header {
+            padding: 50px 15px;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 5px 6px;
+        }
+
+        .hero {
+            margin: 25px 15px;
+            padding: 45px 20px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+        }
+
+        .hero p {
+            font-size: 16px;
+        }
+
+        .stats {
+            grid-template-columns: 1fr;
+            margin: 40px 15px;
+        }
+    }.search-box {
+    max-width: 650px;
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #d5e5dc;
+    border-radius: 30px;
+    font-size: 16px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #14845a;
+    box-shadow: 0 5px 20px rgba(20,132,90,0.15);
+}
+      .dark-button {
+    background: transparent;
+    color: white;
+    border: 1px solid #8ee8bd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: 0.3s;
+}
+      #searchResults {
+    background: white;
+    border-radius: 12px;
+    margin-top: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    overflow: hidden;
+    text-align: left;
+    position: relative;
+    z-index: 100;
+}
+
+.search-result {
+    padding: 13px 18px;
+    cursor: pointer;
+    border-bottom: 1px solid #e5eee9;
+    color: #173b2a;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.search-result:hover {
+    background: #eaf7f0;
+    color: #0b5d3b;
+}
+
+body.dark-mode #searchResults {
+    background: #193529;
+    border: 1px solid #285240;
+}
+
+body.dark-mode .search-result {
+    color: #e8f5ee;
+    border-bottom-color: #285240;
+}
+
+body.dark-mode .search-result:hover {
+    background: #285240;
+    color: #8ee8bd;
+}
+
+.dark-button:hover {
+    background: #8ee8bd;
+    color: #062f20;
+}
+      .dark-mode {
+    background: #10251c;
+    color: #e8f5ee;
+}
+
+.dark-mode .hero {
+    background: linear-gradient(135deg, #173d2d, #10251c);
+}
+
+.dark-mode .hero h2,
+.dark-mode .research h2,
+.dark-mode .projects h2 {
+    color: #8ee8bd;
+}
+
+.dark-mode .hero p,
+.dark-mode .card p,
+.dark-mode .project-card p {
+    color: #c7ddd1;
+}
+
+.dark-mode .card,
+.dark-mode .project-card {
+    background: #193529;
+    border-color: #285240;
+}
+
+.dark-mode .card h3,
+.dark-mode .project-card h3 {
+    color: #8ee8bd;
+}
+
+.dark-mode .search-box input {
+    background: #193529;
+    color: white;
+    border-color: #3b6852;
+}
+
+.dark-mode .search-box input::placeholder {
+    color: #b7cfc2;
+}
+      .about-section {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 50px 25px;
+}
+
+.about-content {
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid #dcebe3;
+}
+
+.about-content h2 {
+    color: #0b5d3b;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    max-width: 800px;
+    margin: 12px auto;
+    line-height: 1.8;
+    color: #4b6658;
+}
+
+.about-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.about-highlights div {
+    min-width: 200px;
+    padding: 20px;
+    background: #f5f9f6;
+    border-radius: 15px;
+    border: 1px solid #dcebe3;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.about-highlights div:hover,
+.about-highlights div:active {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.about-highlights strong {
+    display: block;
+    color: #14845a;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.about-highlights span {
+    color: #5b7165;
+}
+
+body.dark-mode .about-content {
+    background: #193529;
+    border-color: #285240;
+}
+
+body.dark-mode .about-content p {
+    color: #c7ddd1;
+}
+
+body.dark-mode .about-highlights div {
+    background: #10251c;
+    border-color: #285240;
+}
+
+body.dark-mode .about-highlights span {
+    color: #c7ddd1;
+}
+
+@media (max-width: 600px) {
+    .about-section {
+        padding: 30px 15px;
+    }
+
+    .about-content {
+        padding: 30px 20px;
+    }
+
+    .about-content h2 {
+        font-size: 27px;
+    }
+
+    .about-highlights {
+        flex-direction: column;
+    }
+
+    .about-highlights div {
+        width: auto;
+    }
+  .about-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.about-link div {
+    color: inherit;
+}
+
+.about-link:hover,
+.about-link:visited,
+.about-link:active {
+    text-decoration: none;
+}
+}
+      .about-section {
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 20px;
+}
+
+.about-content {
+    background: white;
+    padding: 50px 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid #dfe7e2;
+}
+
+.about-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    max-width: 800px;
+    margin: 12px auto;
+    line-height: 1.8;
+    color: #555;
+}
+
+.about-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+      /* RESEARCH SECTION */
+
+.research-section {
+    max-width: 1150px;
+    margin: 70px auto;
+    padding: 20px;
+}
+
+.research-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.research-heading h2 {
+    font-size: 34px;
+    color: #0b5d3b;
+    margin-bottom: 12px;
+}
+
+.research-heading p {
+    color: #5b7165;
+    font-size: 16px;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.research-card {
+    background: white;
+    padding: 32px;
+    border-radius: 24px;
+    border: 1px solid #dcebe3;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.research-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #14845a;
+}
+
+.research-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+    border-color: #b9dccb;
+}
+
+.research-icon {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eaf7f0;
+    border-radius: 20px;
+    font-size: 42px;
+    margin-bottom: 22px;
+}
+
+.research-card h3 {
+    color: #0b5d3b;
+    font-size: 25px;
+    margin: 0 0 12px;
+}
+
+.research-card p {
+    color: #536b5e;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.research-card a {
+    display: inline-block;
+    background: #0b5d3b;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.research-card a:hover {
+    background: #14845a;
+    transform: translateY(-2px);
+}
+      .research-card:hover .research-icon {
+    transform: scale(1.08) rotate(3deg);
+}
+
+.research-icon {
+    transition: transform 0.3s ease;
+}
+
+/* DARK MODE */
+
+body.dark-mode .research-card {
+    background: #193529;
+    border-color: #285240;
+    color: #e8f5ee;
+}
+
+body.dark-mode .research-heading h2,
+body.dark-mode .research-card h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .research-heading p,
+body.dark-mode .research-card p {
+    color: #c7ddd1;
+}
+
+body.dark-mode .research-icon {
+    background: #285240;
+}
+
+body.dark-mode .research-card a {
+    background: #14845a;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .research-section {
+        margin: 45px auto;
+        padding: 15px;
+    }
+
+    .research-heading h2 {
+        font-size: 28px;
+    }
+
+    .research-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .research-card {
+        padding: 27px;
+        border-radius: 20px;
+    }
+
+    .research-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 36px;
+    }
+}
+      /* WHY BIORESEARCH */
+.why-section {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.why-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.why-heading h2 {
+    color: #0b5d3b;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.why-heading p {
+    color: #666;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.why-card {
+    background: white;
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 18px;
+    border: 1px solid #dfe7e2;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.why-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.why-card h3 {
+    color: #0b5d3b;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.why-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* DARK MODE */
+body.dark-mode .why-heading h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .why-heading p {
+    color: #c7ddd1;
+}
+
+body.dark-mode .why-card {
+    background: #193529;
+    border-color: #285240;
+}
+
+body.dark-mode .why-card h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .why-card p {
+    color: #c7ddd1;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-section {
+        padding: 20px 15px;
+    }
+
+    .why-heading h2 {
+        font-size: 27px;
+    }
+}
+      /* STATS IMPROVEMENT */
+
+.stat {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.stat h3 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+body.dark-mode .stat {
+    background: #193529;
+    border: 1px solid #285240;
+}
+
+@media (max-width: 600px) {
+    .stats {
+        grid-template-columns: 1fr;
+        padding: 20px 15px;
+    }
+}
+      /* PROFESSIONAL FOOTER */
+
+.main-footer {
+    background: #062f20;
+    color: white;
+    margin-top: 80px;
+    padding: 55px 25px 20px;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-brand h2 {
+    color: #8ee8bd;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    max-width: 350px;
+    color: #c7ddd1;
+    line-height: 1.7;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links h3 {
+    color: #8ee8bd;
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #c7ddd1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+    transform: translateX(4px);
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 45px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #285240;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #a9c4b6;
+    font-size: 14px;
+}
+
+/* FOOTER MOBILE */
+
+@media (max-width: 600px) {
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+      /* PROFESSIONAL NAVIGATION */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav a {
+    position: relative;
+    padding: 8px 12px;
+    margin: 0 2px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+    background: #8ee8bd;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+nav a:hover {
+    color: #8ee8bd;
+}
+
+/* MOBILE NAVIGATION */
+
+@media (max-width: 600px) {
+
+    nav {
+        padding: 12px 8px;
+        gap: 3px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 7px 8px;
+    }
+}
+      /* SCROLL TO TOP BUTTON */
+
+#scrollTopBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 25px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: #0b5d3b;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+    transform: translateY(-5px);
+    background: #14845a;
+}
+
+body.dark-mode #scrollTopBtn {
+    background: #14845a;
+}
+
+@media (max-width: 600px) {
+    #scrollTopBtn {
+        right: 15px;
+        bottom: 18px;
+        width: 44px;
+        height: 44px;
+    }
+}
+      /* HIDDEN SCROLL BUTTON */
+
+#scrollTopBtn {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+#scrollTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+      /* LATEST ARTICLES */
+
+.articles-preview {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.articles-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.articles-heading h2 {
+    color: #0b5d3b;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.articles-heading p {
+    color: #666;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.article-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #dfe7e2;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.article-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.article-category {
+    font-size: 12px;
+    font-weight: bold;
+    color: #14845a;
+    letter-spacing: 1px;
+}
+
+.article-card h3 {
+    color: #0b5d3b;
+    font-size: 21px;
+    margin: 10px 0 12px;
+}
+
+.article-card p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.article-card a {
+    color: #0b5d3b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.article-card a:hover {
+    color: #14845a;
+}
+
+.articles-button {
+    text-align: center;
+    margin-top: 35px;
+}
+
+/* DARK MODE */
+
+body.dark-mode .articles-heading h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .articles-heading p {
+    color: #c7ddd1;
+}
+
+body.dark-mode .article-card {
+    background: #193529;
+    border-color: #285240;
+}
+
+body.dark-mode .article-card h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .article-card p {
+    color: #c7ddd1;
+}
+
+body.dark-mode .article-card a {
+    color: #8ee8bd;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .articles-preview {
+        padding: 20px 15px;
+    }
+
+    .articles-heading h2 {
+        font-size: 27px;
+    }
+}
+      /* CALL TO ACTION */
+
+.cta-section {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.cta-content {
+    background: linear-gradient(135deg, #063d27, #0b5d3b, #14845a);
+    color: white;
+    text-align: center;
+    padding: 65px 30px;
+    border-radius: 25px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+.cta-icon {
+    display: block;
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.cta-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.cta-content p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #d9f3e6;
+    line-height: 1.7;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cta-buttons .button {
+    background: white;
+    color: #0b5d3b;
+    box-shadow: none;
+}
+
+.cta-buttons .button:hover {
+    background: #eaf7f0;
+}
+
+.cta-secondary {
+    display: inline-block;
+    padding: 13px 24px;
+    border: 1px solid #8ee8bd;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cta-secondary:hover {
+    background: #8ee8bd;
+    color: #062f20;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .cta-section {
+        padding: 20px 15px;
+    }
+
+    .cta-content {
+        padding: 45px 20px;
+    }
+
+    .cta-content h2 {
+        font-size: 27px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-buttons .button,
+    .cta-secondary {
+        width: 100%;
+        max-width: 260px;
+    }
+}
+      /* HERO PROFESSIONAL EFFECT */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: rgba(20, 132, 90, 0.08);
+    border-radius: 50%;
+    top: -80px;
+    right: -70px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: rgba(11, 93, 59, 0.06);
+    border-radius: 50%;
+    bottom: -70px;
+    left: -50px;
+}
+
+.hero h2,
+.hero p,
+.hero .button {
+    position: relative;
+    z-index: 1;
+}
+      /* RESEARCH INTRO */
+
+.research-intro {
+    max-width: 750px;
+    margin: -15px auto 35px;
+    text-align: center;
+    color: #5b7165;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+body.dark-mode .research-intro {
+    color: #c7ddd1;
+}
+
+@media (max-width: 600px) {
+    .research-intro {
+        padding: 0 10px;
+        font-size: 15px;
+    }
+}
+      /* FEATURED BIOLOGY NOTES */
+
+.notes-preview {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.notes-preview-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.notes-preview-heading h2 {
+    color: #0b5d3b;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.notes-preview-heading p {
+    color: #5b7165;
+    line-height: 1.7;
+}
+
+.notes-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.notes-preview-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #dfe7e2;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: 0.3s ease;
+}
+
+.notes-preview-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    border-color: #b9dccb;
+}
+
+.notes-preview-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.notes-preview-card span {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #14845a;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.notes-preview-card h3 {
+    color: #0b5d3b;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.notes-preview-card p {
+    color: #536b5e;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.notes-preview-card a {
+    display: inline-block;
+    color: #0b5d3b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.notes-preview-card a:hover {
+    color: #14845a;
+}
+
+.notes-preview-button {
+    text-align: center;
+    margin-top: 35px;
+}
+
+/* DARK MODE */
+
+body.dark-mode .notes-preview-heading h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .notes-preview-heading p {
+    color: #c7ddd1;
+}
+
+body.dark-mode .notes-preview-card {
+    background: #193529;
+    border-color: #285240;
+}
+
+body.dark-mode .notes-preview-card h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .notes-preview-card p {
+    color: #c7ddd1;
+}
+
+body.dark-mode .notes-preview-card a {
+    color: #8ee8bd;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .notes-preview {
+        padding: 20px 15px;
+    }
+
+    .notes-preview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .notes-preview-heading h2 {
+        font-size: 27px;
+    }
+
+    .notes-preview-card {
+        padding: 25px;
+    }
+}
+     /* POPULAR BIOLOGY TOPICS */
+
+.popular-section {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.popular-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.popular-heading h2 {
+    color: #0b5d3b;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.popular-heading p {
+    color: #5b7165;
+    line-height: 1.7;
+}
+
+.popular-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.popular-card {
+    display: block;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #dfe7e2;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.popular-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+    border-color: #b9dccb;
+}
+
+.popular-card span {
+    display: block;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.popular-card h3 {
+    color: #0b5d3b;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.popular-card p {
+    color: #536b5e;
+    line-height: 1.7;
+}
+
+/* DARK MODE */
+
+body.dark-mode .popular-heading h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .popular-heading p {
+    color: #c7ddd1;
+}
+
+body.dark-mode .popular-card {
+    background: #193529;
+    border-color: #285240;
+}
+
+body.dark-mode .popular-card h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .popular-card p {
+    color: #c7ddd1;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .popular-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .popular-section {
+        padding: 20px 15px;
+    }
+
+    .popular-heading h2 {
+        font-size: 27px;
+    }
+} 
+      /* ABOUT THE CREATOR */
+
+.researcher-section {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.researcher-content {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    background: linear-gradient(135deg, #eaf7f0, #ffffff);
+    padding: 50px;
+    border-radius: 25px;
+    border: 1px solid #dcebe3;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.researcher-icon {
+    min-width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b5d3b;
+    border-radius: 50%;
+    font-size: 60px;
+    box-shadow: 0 10px 25px rgba(11,93,59,0.2);
+}
+
+.researcher-text {
+    flex: 1;
+}
+
+.researcher-label {
+    display: block;
+    color: #14845a;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.researcher-text h2 {
+    color: #0b5d3b;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.researcher-text p {
+    color: #536b5e;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+/* DARK MODE */
+
+body.dark-mode .researcher-content {
+    background: linear-gradient(135deg, #193529, #10251c);
+    border-color: #285240;
+}
+
+body.dark-mode .researcher-label {
+    color: #8ee8bd;
+}
+
+body.dark-mode .researcher-text h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .researcher-text p {
+    color: #c7ddd1;
+}
+
+body.dark-mode .researcher-icon {
+    background: #14845a;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .researcher-section {
+        padding: 20px 15px;
+    }
+
+    .researcher-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 35px 25px;
+        gap: 25px;
+    }
+
+    .researcher-icon {
+        min-width: 100px;
+        width: 100px;
+        height: 100px;
+        font-size: 45px;
+    }
+
+    .researcher-text h2 {
+        font-size: 27px;
+    }
+}
+      /* RESEARCH STATISTICS */
+
+.research-stats {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.research-stats-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.research-stats-heading h2 {
+    color: #0b5d3b;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.research-stats-heading p {
+    color: #5b7165;
+    line-height: 1.7;
+}
+
+.research-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.research-stat-card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #dfe7e2;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: 0.3s ease;
+}
+
+.research-stat-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.research-stat-card span {
+    display: block;
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.research-stat-card h3 {
+    color: #0b5d3b;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.research-stat-card p {
+    color: #536b5e;
+}
+
+/* DARK MODE */
+
+body.dark-mode .research-stats-heading h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .research-stats-heading p {
+    color: #c7ddd1;
+}
+
+body.dark-mode .research-stat-card {
+    background: #193529;
+    border-color: #285240;
+}
+
+body.dark-mode .research-stat-card h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .research-stat-card p {
+    color: #c7ddd1;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .research-stats {
+        padding: 20px 15px;
+    }
+
+    .research-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+
+    .research-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🧬 BioResearch Hub</h1>
+        <p>Exploring Biology Through Research and Discovery</p>
+    </header>
+
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="#research">Research</a>
+    <a href="articles.html">Articles</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+</nav>
+  <button onclick="toggleDarkMode()" class="dark-button">
+    🌙 Dark Mode
+</button>
+  <div class="search-box">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Search BioResearch Hub..."
+        onkeyup="searchSite()"
+        autocomplete="off"
+    >
+
+    <div id="searchResults"></div>
+</div>
+  
+
+    <section class="hero">
+        <h2>Welcome to BioResearch Hub 🔬</h2>
+
+        <p>
+            A platform dedicated to exploring biological research,
+            scientific discoveries, experiments, and the fascinating
+            world of life sciences.
+        </p>
+
+        <a href="articles.html" class="button">Explore Research</a>
+    </section>
+  <section class="about-section">
+    <div class="about-content">
+        <h2>About BioResearch Hub</h2>
+
+        <p>
+            BioResearch Hub is a biology-focused platform created to make
+            biological science easier to explore, understand, and learn.
+        </p>
+
+        <p>
+            Explore topics such as genetics, microbiology, ecology, and
+            cell biology, along with research articles and useful learning
+            resources.
+        </p>
+
+        <div class="about-highlights">
+            <a href="#research" class="about-link">
+    <div>
+        <strong>🧬 4+</strong>
+        <span>Biology Topics</span>
+    </div>
+</a>
+          <a href="articles.html" class="about-link">
+    <div>
+        <strong>📚 Research</strong>
+        <span>Articles & Projects</span>
+    </div>
+</a>
+                <a href="resources.html" class="about-link">
+    <div>
+        <strong>🔬 Learning</strong>
+        <span>Educational Resources</span>
+    </div>
+</a>
+    </div>
+</section>
+  <section class="notes-preview">
+
+    <div class="notes-preview-heading">
+        <h2>📚 Featured Biology Notes</h2>
+        <p>Study clear and useful biology notes across important topics.</p>
+    </div>
+
+    <div class="notes-preview-grid">
+
+        <div class="notes-preview-card">
+            <div class="notes-preview-icon">🧬</div>
+            <span>GENETICS</span>
+            <h3>DNA & RNA</h3>
+            <p>
+                Learn about DNA and RNA structure, replication,
+                transcription, translation, and genetic information.
+            </p>
+            <a href="dna-rna.html">Read Notes →</a>
+        </div>
+
+        <div class="notes-preview-card">
+            <div class="notes-preview-icon">🧪</div>
+            <span>BIOLOGY</span>
+            <h3>Enzymes</h3>
+            <p>
+                Understand enzymes, their functions, factors affecting
+                enzyme activity, and their importance in living organisms.
+            </p>
+            <a href="enzymes.html">Read Notes →</a>
+        </div>
+
+        <div class="notes-preview-card">
+            <div class="notes-preview-icon">🌱</div>
+            <span>PLANT BIOLOGY</span>
+            <h3>Plant Reproduction</h3>
+            <p>
+                Explore flowers, pollination, fertilization, seeds,
+                fruits, and vegetative reproduction.
+            </p>
+            <a href="plant-reproduction.html">Read Notes →</a>
+        </div>
+
+        <div class="notes-preview-card">
+            <div class="notes-preview-icon">🧬</div>
+            <span>HUMAN BIOLOGY</span>
+            <h3>Human Reproduction</h3>
+            <p>
+                Study the reproductive systems, gametes, fertilization,
+                pregnancy, and reproductive hormones.
+            </p>
+            <a href="human-reproduction.html">Read Notes →</a>
+        </div>
+
+    </div>
+
+    <div class="notes-preview-button">
+        <a href="resources.html" class="button">View All Notes</a>
+    </div>
+
+</section>
+ <section class="research-section">
+    <div class="research-heading">
+        <h2>Featured Research</h2>
+        <p>Explore interesting areas of biological research and discovery.</p>
+    </div>
+
+    <div class="research-grid">
+
+        <div class="research-card">
+            <div class="research-icon">🧬</div>
+            <h3>Genetics</h3>
+            <p>
+                Discover how genes, DNA, heredity, and genetic variation
+                shape living organisms.
+            </p>
+            <a href="genetics.html">Explore Genetics →</a>
+        </div>
+
+        <div class="research-card">
+            <div class="research-icon">🦠</div>
+            <h3>Microbiology</h3>
+            <p>
+                Learn about microorganisms, bacteria, viruses, fungi,
+                and their roles in life and disease.
+            </p>
+            <a href="microbiology.html">Explore Microbiology →</a>
+        </div>
+
+        <div class="research-card">
+            <div class="research-icon">🌱</div>
+            <h3>Ecology</h3>
+            <p>
+                Understand ecosystems, biodiversity, populations,
+                communities, and the environment.
+            </p>
+            <a href="ecology.html">Explore Ecology →</a>
+        </div>
+
+        <div class="research-card">
+            <div class="research-icon">🔬</div>
+            <h3>Cell Biology</h3>
+            <p>
+                Explore cell structure, organelles, cell division,
+                transport, and cellular processes.
+            </p>
+            <a href="cell-biology.html">Explore Cell Biology →</a>
+        </div>
+
+    </div>
+</section>
+  <section class="popular-section">
+
+    <div class="popular-heading">
+        <h2>🔥 Popular Biology Topics</h2>
+        <p>Explore some of the most important topics in biological science.</p>
+    </div>
+
+    <div class="popular-grid">
+
+        <a href="genetics.html" class="popular-card">
+            <span>🧬</span>
+            <h3>Genetics</h3>
+            <p>Genes, DNA, heredity and genetic variation.</p>
+        </a>
+
+        <a href="microbiology.html" class="popular-card">
+            <span>🦠</span>
+            <h3>Microbiology</h3>
+            <p>Microorganisms, bacteria, viruses and fungi.</p>
+        </a>
+
+        <a href="ecology.html" class="popular-card">
+            <span>🌱</span>
+            <h3>Ecology</h3>
+            <p>Ecosystems, biodiversity and the environment.</p>
+        </a>
+
+        <a href="cell-biology.html" class="popular-card">
+            <span>🔬</span>
+            <h3>Cell Biology</h3>
+            <p>Cells, organelles and cellular processes.</p>
+        </a>
+
+        <a href="enzymes.html" class="popular-card">
+            <span>🧪</span>
+            <h3>Enzymes</h3>
+            <p>Biological catalysts and enzyme activity.</p>
+        </a>
+
+        <a href="dna-rna.html" class="popular-card">
+            <span>🧬</span>
+            <h3>DNA & RNA</h3>
+            <p>Genetic information and protein synthesis.</p>
+        </a>
+
+    </div>
+
+</section>
+        <section class="why-section">
+    <div class="why-heading">
+        <h2>Why BioResearch?</h2>
+        <p>A simple platform for learning, exploring, and discovering biology.</p>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <div class="why-icon">📚</div>
+            <h3>Easy to Learn</h3>
+            <p>
+                Complex biological concepts are presented in a clear
+                and understandable way.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">🔬</div>
+            <h3>Research Focused</h3>
+            <p>
+                Explore scientific topics, research ideas, and discoveries
+                across different areas of biology.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">🌍</div>
+            <h3>Explore Biology</h3>
+            <p>
+                Discover how living organisms interact with cells,
+                environments, and one another.
+            </p>
+        </div>
+    </div>
+</section>
+      <section class="articles-preview">
+
+    <div class="articles-heading">
+        <h2>📚 Latest Articles</h2>
+        <p>Explore biology topics, discoveries, and educational insights.</p>
+    </div>
+
+    <div class="articles-grid">
+
+        <article class="article-card">
+            <div class="article-icon">🧬</div>
+            <span class="article-category">GENETICS</span>
+            <h3>Understanding Genetic Variation</h3>
+            <p>
+                Learn how differences in DNA contribute to variation
+                among organisms and populations.
+            </p>
+            <a href="genetic-variation.html">Read Article →</a>
+        </article>
+
+        <article class="article-card">
+            <div class="article-icon">🦠</div>
+            <span class="article-category">MICROBIOLOGY</span>
+            <h3>The World of Microorganisms</h3>
+            <p>
+                Discover microorganisms and their important roles
+                in humans, ecosystems, and the environment.
+            </p>
+            <a href="microorganisms.html">Read Article →</a>
+        </article>
+
+        <article class="article-card">
+            <div class="article-icon">🌍</div>
+            <span class="article-category">ECOLOGY</span>
+            <h3>Why Biodiversity Matters</h3>
+            <p>
+                Explore biodiversity and how different organisms
+                contribute to healthy ecosystems.
+            </p>
+            <a href="biodiversity.html">Read Article →</a>
+        </article>
+
+    </div>
+
+    <div class="articles-button">
+        <a href="articles.html" class="button">View All Articles</a>
+    </div>
+
+</section>
+  <section class="researcher-section">
+
+    <div class="researcher-content">
+
+        <div class="researcher-icon">
+            🧬
+        </div>
+
+        <div class="researcher-text">
+            <span class="researcher-label">ABOUT THE CREATOR</span>
+
+            <h2>Meet the Creator of BioResearch Hub</h2>
+
+            <p>
+                BioResearch Hub was created to make biology easier to
+                explore, understand, and appreciate through clear
+                educational content and research-focused resources.
+            </p>
+
+            <p>
+                The platform brings together biology notes, research
+                topics, scientific articles, and learning resources
+                in one place for students and biology enthusiasts.
+            </p>
+
+            <a href="contact.html" class="button">
+                Get in Touch →
+            </a>
+        </div>
+
+    </div>
+
+</section>
+      <section class="cta-section">
+    <div class="cta-content">
+        <span class="cta-icon">🔬</span>
+
+        <h2>Ready to Explore Biology?</h2>
+
+        <p>
+            Discover research topics, educational resources,
+            scientific articles, and fascinating biological discoveries.
+        </p>
+
+        <div class="cta-buttons">
+            <a href="articles.html" class="button">Explore Articles</a>
+            <a href="resources.html" class="cta-secondary">View Resources</a>
+        </div>
+    </div>
+</section>
+
+    <section class="research" id="research">
+    <h2>Research Areas</h2>
+
+    <p class="research-intro">
+        Explore key areas of biological science, from genetics and
+        microbiology to ecology and cell biology. Discover concepts,
+        research topics, and scientific knowledge across each field.
+    </p>
+
+        <div class="cards">
+
+           <div class="card">
+    <h3>🧬 Genetics</h3>
+    <p>
+        Explore genes, heredity, DNA, mutations,
+        and genetic variation.
+    </p>
+    <a href="genetics.html" class="button">View Research</a>
+</div> 
+
+            <div class="card">
+                <h3>🦠 Microbiology</h3>
+              <a href="microbiology.html" class="button">View Research</a>
+                <p>
+                    Learn about microorganisms, bacteria,
+                    viruses, fungi, and their importance.
+                </p>
+            </div>
+
+            <div class="card">
+    <h3>🌱 Ecology</h3>
+    <p>Explore ecosystems, biodiversity, food chains and environmental change.</p>
+
+    <a href="ecology.html" class="button">View Research</a>
+</div>
+
+            <div class="card">
+    <h3>🔬 Cell Biology</h3>
+    <p>Explore cell structure, cellular energy, cell division and microscopy.</p>
+              
+
+    <a href="cell-biology.html" class="button">View Research</a>
+</div>
+
+        </div>
+    </>
+
+  <section class="projects">
+    <h2>🔬 Featured Research Projects</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <span>🧬</span>
+            <h3>Genetic Variation</h3>
+            <p>
+                Investigating how genetic differences occur
+                within biological populations.
+            </p>
+            <a href="./genetic-variation.html" class="button">View Research</a>
+        </div>
+
+        <div class="project-card">
+            <span>🦠</span>
+            <h3>Microbial Study</h3>
+            <p>
+                Exploring microorganisms and their roles
+                in humans and the environment.
+            </p>
+            <a href="./microorganisms.html" class="button">View Research</a>
+        </div>
+
+        <div class="project-card">
+            <span>🌱</span>
+            <h3>Biodiversity</h3>
+            <p>
+                Studying biodiversity and the factors that
+                influence different ecosystems.
+            </p>
+            <a href="./biodiversity.html" class="button">View Research</a>
+        </div>
+
+    </div>
+</section>
+  <section class="stats">
+
+    <div class="stat">
+        <h3>4+</h3>
+        <p>Research Areas</p>
+    </div>
+
+    <div class="stat">
+        <h3>3+</h3>
+        <p>Featured Projects</p>
+    </div>
+
+    <div class="stat">
+        <h3>6+</h3>
+        <p>Learning Resources</p>
+    </div>
+
+</section>
+      <section class="research-stats">
+
+    <div class="research-stats-heading">
+        <h2>📊 BioResearch Hub at a Glance</h2>
+        <p>Explore the growing collection of biology learning resources.</p>
+    </div>
+
+    <div class="research-stats-grid">
+
+        <div class="research-stat-card">
+            <span>🔬</span>
+            <h3>10+</h3>
+            <p>Biology Topics</p>
+        </div>
+
+        <div class="research-stat-card">
+            <span>📚</span>
+            <h3>15+</h3>
+            <p>Learning Resources</p>
+        </div>
+
+        <div class="research-stat-card">
+            <span>🧬</span>
+            <h3>5+</h3>
+            <p>Research Areas</p>
+        </div>
+
+        <div class="research-stat-card">
+            <span>🌍</span>
+            <h3>Growing</h3>
+            <p>Biology Community</p>
+        </div>
+
+    </div>
+
+</section>
+  <button id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to top">
+    ↑
+</button>
+    <footer class="main-footer">
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+            <h2>🧬 BioResearch Hub</h2>
+            <p>
+                Exploring biology through research,
+                education, and scientific discovery.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="articles.html">Articles</a>
+            <a href="resources.html">Resources</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>Research</h3>
+            <a href="genetics.html">Genetics</a>
+            <a href="microbiology.html">Microbiology</a>
+            <a href="ecology.html">Ecology</a>
+            <a href="cell-biology.html">Cell Biology</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 BioResearch Hub. All rights reserved.</p>
+        <p>Biological Research & Education</p>
+    </div>
+
+</footer>
+  <script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (document.body.classList.contains("dark-mode")) {
+        button.innerHTML = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        button.innerHTML = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+}
+
+function searchSite() {
+    const input = document.getElementById("searchInput");
+    const results = document.getElementById("searchResults");
+    const searchText = input.value.toLowerCase().trim();
+
+    const pages = [
+        { name: "🧬 Genetics", keywords: "genetics gene genes", url: "genetics.html" },
+        { name: "🦠 Microbiology", keywords: "microbiology microbes microorganisms bacteria", url: "microbiology.html" },
+        { name: "🌱 Ecology", keywords: "ecology environment ecosystem biodiversity", url: "ecology.html" },
+        { name: "🔬 Cell Biology", keywords: "cell biology cells organelles", url: "cell-biology.html" },
+        { name: "📚 Articles", keywords: "articles research", url: "articles.html" },
+        { name: "📖 Resources", keywords: "resources learning study", url: "resources.html" },
+        { name: "📩 Contact", keywords: "contact email", url: "contact.html" },
+        { name: "🧬 Genetic Variation", keywords: "genetic variation genetics", url: "genetic-variation.html" },
+        { name: "🦠 Microorganisms", keywords: "microorganisms microbes microbiology", url: "microorganisms.html" },
+        { name: "🌍 Biodiversity", keywords: "biodiversity ecology environment", url: "biodiversity.html" },
+        { name: "🧪 Enzymes Notes", keywords: "enzymes enzyme biology catalyst", url: "enzymes.html" },
+        { name: "💨 Wind Notes", keywords: "wind air movement atmosphere biology", url: "wind.html" },
+        { name: "🧬 DNA & RNA Notes", keywords: "dna rna genetics nucleic acid replication transcription translation", url: "dna-rna.html" },
+        { name: "🌱 Plant Reproduction Notes", keywords: "plant reproduction flowers pollination fertilization seeds vegetative propagation", url: "plant-reproduction.html" },
+        { name: "🧬 Human Reproduction Notes", keywords: "human reproduction reproductive system sperm ovum fertilization pregnancy hormones", url: "human-reproduction.html" },
+    ];
+
+    results.innerHTML = "";
+
+    if (searchText === "") {
+        results.style.display = "none";
+    } else {
+        const matches = pages.filter(function(page) {
+            return page.name.toLowerCase().includes(searchText) ||
+                   page.keywords.includes(searchText);
+        });
+
+        matches.forEach(function(page) {
+            const item = document.createElement("div");
+
+            item.className = "search-result";
+            item.textContent = page.name;
+
+            item.onclick = function() {
+                window.location.href = page.url;
+            };
+
+            results.appendChild(item);
+        });
+
+        if (matches.length > 0) {
+            results.style.display = "block";
+        } else {
+            results.innerHTML = '<div class="search-result">No results found</div>';
+            results.style.display = "block";
+        }
+    }
+}
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (button) {
+        button.innerHTML = "☀️ Light Mode";
+    }
+}
+    function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", function() {
+    if (window.scrollY > 400) {
+        scrollTopBtn.classList.add("show");
+    } else {
+        scrollTopBtn.classList.remove("show");
+    }
+});
+</script>
+
+</body>
+</html>

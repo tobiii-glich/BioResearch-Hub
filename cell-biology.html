@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cell Biology Research | BioResearch Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f9f6;
+            color: #173b2a;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #063d27, #0b5d3b, #14845a);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #062f20;
+            padding: 16px 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #8ee8bd;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 45px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            margin-bottom: 35px;
+        }
+
+        .intro h2 {
+            color: #0b5d3b;
+            margin-bottom: 15px;
+        }
+
+        .topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .topic-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid #e3eee8;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .topic-card span {
+            font-size: 40px;
+        }
+
+        .topic-card h3 {
+            color: #0b5d3b;
+            margin: 12px 0;
+        }
+
+        .dark-button {
+    background: transparent;
+    color: white;
+    border: 1px solid #8ee8bd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: 0.3s;
+}
+
+.dark-button:hover {
+    background: #8ee8bd;
+    color: #062f20;
+}
+
+body.dark-mode {
+    background: #10251c;
+    color: #e8f5ee;
+}
+
+body.dark-mode .intro,
+body.dark-mode .topic-card {
+    background: #193529;
+    color: #e8f5ee;
+    border-color: #285240;
+}
+
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #8ee8bd;
+}
+
+body.dark-mode nav,
+body.dark-mode footer {
+    background: #021c12;
+}
+
+        footer {
+            margin-top: 70px;
+            background: #062f20;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 6px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+      /* ==============================
+   CELL BIOLOGY STUDY NOTES
+============================== */
+
+.study-notes {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.study-notes > h2 {
+    text-align: center;
+    color: #0b5d3b;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.note-topic {
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    border: 1px solid #dfe7e2;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: 0.3s ease;
+}
+
+.note-topic:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+    border-color: #b9dccb;
+}
+
+.note-topic h3 {
+    color: #0b5d3b;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.note-topic h4 {
+    color: #14845a;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.note-topic p {
+    color: #536b5e;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.note-topic ul,
+.note-topic ol {
+    color: #536b5e;
+    line-height: 1.9;
+    padding-left: 25px;
+}
+
+.note-topic li {
+    margin-bottom: 7px;
+}
+
+.note-topic strong {
+    color: #0b5d3b;
+}
+
+.note-topic .example {
+    background: #eaf7f0;
+    padding: 18px;
+    border-left: 4px solid #14845a;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Dark Mode */
+
+body.dark-mode .study-notes > h2 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .note-topic {
+    background: #193529;
+    border-color: #285240;
+}
+
+body.dark-mode .note-topic h3,
+body.dark-mode .note-topic h4 {
+    color: #8ee8bd;
+}
+
+body.dark-mode .note-topic p,
+body.dark-mode .note-topic ul,
+body.dark-mode .note-topic ol {
+    color: #c7ddd1;
+}
+
+body.dark-mode .note-topic strong {
+    color: #8ee8bd;
+}
+
+body.dark-mode .note-topic .example {
+    background: #10251c;
+    border-left-color: #8ee8bd;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .study-notes {
+        padding: 20px 15px;
+    }
+
+    .study-notes > h2 {
+        font-size: 27px;
+    }
+
+    .note-topic {
+        padding: 24px;
+    }
+
+    .note-topic h3 {
+        font-size: 21px;
+    }
+
+    .note-topic p,
+    .note-topic li {
+        font-size: 15px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔬 Cell Biology Research</h1>
+    <p>Exploring the structure, function and activities of cells</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="genetics.html">Genetics</a>
+    <a href="microbiology.html">Microbiology</a>
+    <a href="ecology.html">Ecology</a>
+    <a href="cell-biology.html">Cell Biology</a>
+    <a href="articles.html">Articles</a>
+    <a href="resources.html">Resources</a>
+    <a href="contact.html">Contact</a>
+
+    <button onclick="toggleDarkMode()" class="dark-button">
+        🌙 Dark Mode
+    </button>
+</nav>
+<main class="container">
+
+    <section class="intro">
+        <h2>About Cell Biology</h2>
+
+        <p>
+            Cell biology is the study of cells, the basic structural
+            and functional units of living organisms. It explores
+            how cells are organized, how they function and how they
+            interact with their environment.
+        </p>
+    </section>
+
+    <section class="topics">
+
+        <div class="topic-card">
+            <span>🧫</span>
+            <h3>Cell Structure</h3>
+            <p>
+                Explore the major structures of cells, including
+                the cell membrane, cytoplasm and nucleus.
+            </p>
+        </div>
+
+        <div class="topic-card">
+            <span>⚡</span>
+            <h3>Cellular Energy</h3>
+            <p>
+                Learn how cells obtain and use energy for their
+                activities and survival.
+            </p>
+        </div>
+
+        <div class="topic-card">
+            <span>🧬</span>
+            <h3>Cell Division</h3>
+            <p>
+                Study how cells reproduce through processes such
+                as mitosis and meiosis.
+            </p>
+        </div>
+
+        <div class="topic-card">
+            <span>🔬</span>
+            <h3>Microscopy</h3>
+            <p>
+                Discover how microscopes allow scientists to observe
+                cells and their structures.
+            </p>
+        </div>
+
+    </section>
+  <section class="study-notes">
+
+    <h2>🔬 Cell Biology: Detailed Study Notes</h2>
+
+    <div class="note-topic">
+        <h3>1. What is a Cell?</h3>
+        <p>
+            A cell is the basic structural and functional unit of life.
+            All living organisms are made up of one or more cells.
+        </p>
+
+        <p>
+            Some organisms, such as bacteria, consist of a single cell,
+            while organisms such as humans, plants, and animals are made
+            up of many cells.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>2. Cell Theory</h3>
+
+        <p>The modern cell theory states that:</p>
+
+        <ul>
+            <li>All living organisms are made up of one or more cells.</li>
+            <li>The cell is the basic unit of structure and function in living organisms.</li>
+            <li>New cells arise from pre-existing cells.</li>
+            <li>Cells contain hereditary information that can be passed to daughter cells.</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>3. Types of Cells</h3>
+
+        <h4>🦠 Prokaryotic Cells</h4>
+
+        <p>
+            Prokaryotic cells are generally small and simple cells that do
+            not have a membrane-bound nucleus.
+        </p>
+
+        <p>
+            Bacteria are examples of organisms with prokaryotic cells.
+        </p>
+
+        <h4>🧬 Eukaryotic Cells</h4>
+
+        <p>
+            Eukaryotic cells have a true nucleus surrounded by a nuclear
+            membrane and contain membrane-bound organelles.
+        </p>
+
+        <p>
+            Plants, animals, fungi, and many protists have eukaryotic cells.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>4. Cell Organelles and Their Functions</h3>
+
+        <ul>
+            <li>
+                <strong>Nucleus:</strong> Contains genetic material and controls many cell activities.
+            </li>
+
+            <li>
+                <strong>Cell membrane:</strong> Controls movement of substances into and out of the cell.
+            </li>
+
+            <li>
+                <strong>Cytoplasm:</strong> Where many chemical reactions occur.
+            </li>
+
+            <li>
+                <strong>Mitochondria:</strong> Site of aerobic respiration and major ATP production.
+            </li>
+
+            <li>
+                <strong>Ribosomes:</strong> Site of protein synthesis.
+            </li>
+
+            <li>
+                <strong>Endoplasmic reticulum:</strong> Helps produce and transport proteins and other substances.
+            </li>
+
+            <li>
+                <strong>Golgi apparatus:</strong> Modifies, sorts, and packages certain cell products.
+            </li>
+
+            <li>
+                <strong>Lysosomes:</strong> Contain digestive enzymes that break down materials.
+            </li>
+
+            <li>
+                <strong>Chloroplasts:</strong> Site of photosynthesis in plant cells.
+            </li>
+
+            <li>
+                <strong>Vacuole:</strong> Stores substances; plant cell vacuoles also help maintain cell pressure.
+            </li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>5. Plant Cells and Animal Cells</h3>
+
+        <p>
+            Plant and animal cells are both eukaryotic, but they have
+            important structural differences.
+        </p>
+
+        <ul>
+            <li>Plant cells have a cellulose cell wall.</li>
+            <li>Plant cells contain chloroplasts.</li>
+            <li>Plant cells usually have a large permanent vacuole.</li>
+            <li>Animal cells do not have a cell wall.</li>
+            <li>Animal cells do not normally contain chloroplasts.</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>6. Cell Membrane</h3>
+
+        <p>
+            The cell membrane is a selectively permeable boundary around
+            the cell. It controls the movement of substances between the
+            cell and its surroundings.
+        </p>
+
+        <p>
+            It is mainly made up of phospholipids and proteins and is
+            commonly described using the fluid mosaic model.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>7. Diffusion</h3>
+
+        <p>
+            Diffusion is the net movement of particles from a region of
+            higher concentration to a region of lower concentration,
+            down a concentration gradient.
+        </p>
+
+        <p>
+            Diffusion does not require cellular energy in the form of ATP.
+        </p>
+
+        <p class="example">
+            Example: Oxygen can diffuse from the air in the alveoli into the blood.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>8. Osmosis</h3>
+
+        <p>
+            Osmosis is the net movement of water molecules through a
+            selectively permeable membrane from a region of higher water
+            potential to a region of lower water potential.
+        </p>
+
+        <p>
+            Osmosis is important in maintaining water balance in cells.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>9. Active Transport</h3>
+
+        <p>
+            Active transport is the movement of substances across a cell
+            membrane against their concentration gradient using cellular
+            energy.
+        </p>
+
+        <p>
+            It commonly requires carrier proteins and energy from ATP.
+        </p>
+
+        <p class="example">
+            Example: Mineral ions can be actively absorbed by plant roots.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>10. Cell Division</h3>
+
+        <p>
+            Cell division is the process by which a cell produces new cells.
+            It is important for growth, repair, reproduction, and
+            replacement of damaged cells.
+        </p>
+
+        <h4>Mitosis</h4>
+
+        <p>
+            Mitosis produces genetically similar daughter cells and is
+            important for growth and tissue repair.
+        </p>
+
+        <h4>Meiosis</h4>
+
+        <p>
+            Meiosis produces cells with half the usual chromosome number
+            and contributes to genetic variation during sexual reproduction.
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>11. Stages of Mitosis</h3>
+
+        <ol>
+            <li><strong>Prophase:</strong> Chromosomes condense and become visible.</li>
+            <li><strong>Metaphase:</strong> Chromosomes line up near the middle of the cell.</li>
+            <li><strong>Anaphase:</strong> Sister chromatids separate.</li>
+            <li><strong>Telophase:</strong> New nuclear membranes form around the chromosome sets.</li>
+            <li><strong>Cytokinesis:</strong> The cytoplasm divides to form two daughter cells.</li>
+        </ol>
+    </div>
+
+    <div class="note-topic">
+        <h3>12. Cell Specialization</h3>
+
+        <p>
+            Cell specialization is the process by which cells develop
+            structures and functions suited to particular roles.
+        </p>
+
+        <h4>Examples</h4>
+
+        <ul>
+            <li>
+                <strong>Red blood cells:</strong> Specialized for transporting oxygen.
+            </li>
+
+            <li>
+                <strong>Root hair cells:</strong> Specialized for absorbing water and mineral ions.
+            </li>
+
+            <li>
+                <strong>Neurones:</strong> Specialized for transmitting electrical signals.
+            </li>
+
+            <li>
+                <strong>Sperm cells:</strong> Specialized for reaching and fertilizing an egg cell.
+            </li>
+
+            <li>
+                <strong>Palisade cells:</strong> Specialized for photosynthesis.
+            </li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>13. Microscopy</h3>
+
+        <p>
+            Microscopes are instruments used to observe structures that
+            cannot be seen clearly with the unaided eye.
+        </p>
+
+        <p>
+            Light microscopes use visible light and lenses, while electron
+            microscopes use beams of electrons and can reveal much finer
+            structural details.
+        </p>
+
+        <p><strong>Magnification:</strong></p>
+
+        <p class="example">
+            Magnification = Image size ÷ Actual size
+        </p>
+    </div>
+
+    <div class="note-topic">
+        <h3>14. Importance of Cells</h3>
+
+        <ul>
+            <li>They form the structures of living organisms.</li>
+            <li>They carry out essential life processes.</li>
+            <li>They produce and use energy.</li>
+            <li>They contain genetic information.</li>
+            <li>They allow organisms to grow and repair damaged tissues.</li>
+            <li>They enable reproduction and development.</li>
+        </ul>
+    </div>
+
+    <div class="note-topic">
+        <h3>15. Quick Cell Biology Revision</h3>
+
+        <ul>
+            <li><strong>Cell:</strong> Basic structural and functional unit of life.</li>
+            <li><strong>Nucleus:</strong> Contains genetic material.</li>
+            <li><strong>Mitochondria:</strong> Major site of aerobic respiration.</li>
+            <li><strong>Ribosomes:</strong> Protein synthesis.</li>
+            <li><strong>Chloroplast:</strong> Photosynthesis.</li>
+            <li><strong>Diffusion:</strong> Movement down a concentration gradient.</li>
+            <li><strong>Osmosis:</strong> Movement of water through a selectively permeable membrane.</li>
+            <li><strong>Active transport:</strong> Movement against a concentration gradient using energy.</li>
+            <li><strong>Mitosis:</strong> Produces genetically similar daughter cells.</li>
+            <li><strong>Meiosis:</strong> Produces haploid cells for sexual reproduction.</li>
+        </ul>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 BioResearch Hub 🧬</p>
+</footer>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (document.body.classList.contains("dark-mode")) {
+        button.innerHTML = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+    } else {
+        button.innerHTML = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+    }
+}
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+
+    const button = document.querySelector(".dark-button");
+
+    if (button) {
+        button.innerHTML = "☀️ Light Mode";
+    }
+}
+</script>
+
+</body>
+</html>
